@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Soalin — Belajar Jadi Seru</title>
+<title>Soalin Premium — Bank Soal Ujian</title>
 <link rel="icon" href="./favicon-tab.ico" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1512,9 +1512,102 @@
     border: 2px solid var(--card); box-shadow: 0 0 0 1px var(--border); cursor: pointer;
   }
   .volumeSlider::-moz-range-track { background: var(--border-light); height: 6px; border-radius: 999px; }
+
+  /* ── Password Gate ──────────────────────────────────────────────────── */
+  #gate-overlay {
+    position: fixed; inset: 0; z-index: 9999;
+    background: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+  }
+  #gate-overlay.hidden { display: none; }
+  .gate-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px 32px;
+    max-width: 380px; width: 100%;
+    text-align: center;
+  }
+  .gate-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .gate-logo span { color: var(--accent); }
+  .gate-sub {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 28px;
+    letter-spacing: 0.03em;
+  }
+  .gate-label {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: left;
+    margin-bottom: 6px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .gate-input {
+    width: 100%; box-sizing: border-box;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 1rem;
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 8px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .gate-input:focus { border-color: var(--accent); }
+  .gate-input.error { border-color: var(--wrong); animation: shake 0.3s; }
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+  }
+  .gate-err {
+    font-size: 0.78rem;
+    color: var(--wrong);
+    min-height: 1em;
+    margin-bottom: 16px;
+    text-align: left;
+  }
+  .gate-btn {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .gate-btn:hover { opacity: 0.85; }
 </style>
 </head>
 <body>
+
+  <!-- Password Gate (injected by Soalin Premium) -->
+  <div id="gate-overlay">
+    <div class="gate-card">
+      <div class="gate-logo">Soalin<span> Premium</span></div>
+      <div class="gate-sub">Bank Soal Ujian Akhir · Akses Terbatas</div>
+      <label class="gate-label" for="gate-input">Password</label>
+      <input id="gate-input" class="gate-input" type="password"
+             placeholder="Masukkan password…" autocomplete="current-password" />
+      <div class="gate-err" id="gate-err"></div>
+      <button class="gate-btn" id="gate-btn" onclick="gateSubmit()">Masuk</button>
+    </div>
+  </div>
+
 <div id="app"></div>
 <!-- P5 Mode: sword flash overlay + notification bar (no character images) -->
 <img id="p5Sword" class="p5-sword-overlay" src="data:image/png;base64,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" alt="" aria-hidden="true">
@@ -1533,11 +1626,11 @@ let allQuestions = [];
 const LOAD_BATCH = 15; // jumlah soal yang dimuat sekaligus, biar Mode Latihan gak lag
 // v2: dinaikkan supaya progres lama yang mungkin sudah "tercemar" (bocor dari
 // bug lintas-paket sebelumnya) tidak ikut ke-load lagi — user mulai bersih.
-const LS_KEY_PREFIX = "soalin_biasa_progress_v2";
-const ACTIVE_PKG_KEY = "soalin_active_package";
-const MUTE_KEY = "soalin_muted";
-const THEME_KEY = "soalin_theme"; // "dark" | "light" | "p5"
-const VOLUME_KEY = "soalin_volume"; // "0".."1"
+const LS_KEY_PREFIX = "soalinprem_biasa_progress_v2";
+const ACTIVE_PKG_KEY = "soalinprem_active_package";
+const MUTE_KEY = "soalinprem_muted";
+const THEME_KEY = "soalinprem_theme"; // "dark" | "light" | "p5"
+const VOLUME_KEY = "soalinprem_volume"; // "0".."1"
 
 const DIFFICULTY_CONFIG = {
   cheetah:  { label: "Cheetah",      emoji: "🐆", timerSeconds: 30,  desc: "am fast boi",                          color: "#f59e0b" },
@@ -2821,6 +2914,46 @@ async function boot() {
   render();
 }
 boot();
+
+
+// ── Password Gate ─────────────────────────────────────────────────────────
+const GATE_KEY   = "soalinprem_unlocked";
+const GATE_PASS  = "ukdw2025"; // ← ganti password di sini
+
+function gateSubmit() {
+  const val = document.getElementById("gate-input").value;
+  const inp = document.getElementById("gate-input");
+  const err = document.getElementById("gate-err");
+  if (val === GATE_PASS) {
+    try { localStorage.setItem(GATE_KEY, "1"); } catch { /* noop */ }
+    document.getElementById("gate-overlay").classList.add("hidden");
+    inp.classList.remove("error");
+    err.textContent = "";
+  } else {
+    inp.classList.add("error");
+    err.textContent = "Password salah. Coba lagi.";
+    setTimeout(() => inp.classList.remove("error"), 400);
+  }
+}
+
+function gateInit() {
+  let unlocked = false;
+  try { unlocked = localStorage.getItem(GATE_KEY) === "1"; } catch { /* noop */ }
+  if (unlocked) {
+    document.getElementById("gate-overlay").classList.add("hidden");
+  } else {
+    // Enter key support
+    document.getElementById("gate-input").addEventListener("keydown", e => {
+      if (e.key === "Enter") gateSubmit();
+    });
+    // Focus the input
+    setTimeout(() => document.getElementById("gate-input").focus(), 100);
+  }
+}
+
+gateInit();
+// ─────────────────────────────────────────────────────────────────────────
+
 </script>
 </body>
 </html>
