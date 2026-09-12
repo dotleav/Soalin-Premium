@@ -1,7 +1,5 @@
-// File ini DIBUAT/DIKELOLA OTOMATIS oleh scripts/convert-docx.js.
+// File ini DIBUAT/DIKELOLA OTOMATIS oleh konverter Soalin.
 // Berisi daftar semua "paket soal" (hasil konversi docx per kategori).
-// Jangan diedit manual kecuali kamu tahu apa yang kamu lakukan — bisa
-// dihapus/ditimpa lagi saat konversi berikutnya jalan untuk paket yang sama.
 
 export const packages = [
   {
@@ -48,6 +46,15 @@ export const packages = [
     "count": 40,
     "convertedAt": "2026-09-07T03:22:06.532Z",
     "source": "Soal_Analisis_LCS_Blok2H.docx"
+  },
+  {
+    "id": "blok-1j__ub-1j-temporary",
+    "category": "Blok 1J",
+    "title": "UB 1J (Temporary)",
+    "file": "./data/packages/blok-1j__ub-1j-temporary/questions.js",
+    "count": 155,
+    "convertedAt": "2026-09-12T17:33:40.488Z",
+    "source": "Soal_UB_1J_2022_template_soalin (1).docx"
   },
   {
     "id": "latihan-kk7__latihan-pemeriksaan-tanda-meningeal",
