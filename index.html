@@ -2955,5 +2955,342 @@ gateInit();
 // ─────────────────────────────────────────────────────────────────────────
 
 </script>
+
+<!-- ════════════════════════════════════════════════════════════════════
+     Kelola Paket — admin panel: rename/move packages & categories.
+     Self-contained (own PIN gate, own manifest loading) so it can't
+     interfere with the app above. Only touches data/manifest.js — never
+     touches images/ or data/packages/<id>/ (package "id" never changes).
+     ════════════════════════════════════════════════════════════════════ -->
+<style>
+  #kp-fab {
+    position: fixed; right: 14px; bottom: 14px; z-index: 9000;
+    width: 42px; height: 42px; border-radius: 50%;
+    background: rgba(20,20,20,0.55); color: #fff; border: none;
+    font-size: 18px; cursor: pointer; opacity: 0.45;
+  }
+  #kp-fab:hover { opacity: 0.9; }
+  #kp-overlay {
+    position: fixed; inset: 0; z-index: 9500;
+    background: rgba(10,14,12,0.72);
+    display: none; align-items: center; justify-content: center; padding: 16px;
+  }
+  #kp-overlay.open { display: flex; }
+  .kp-card {
+    background: #fff; color: #1c2b2a; width: 100%; max-width: 520px;
+    max-height: 88vh; overflow-y: auto; border-radius: 12px; padding: 20px;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .kp-card h2 { margin: 0 0 4px; font-size: 1.1rem; }
+  .kp-card .kp-sub { font-size: .82rem; color: #667; margin-bottom: 14px; }
+  .kp-card label { display: block; font-size: .8rem; color: #465650; margin: 10px 0 4px; }
+  .kp-card input[type=password], .kp-card input[type=text] {
+    width: 100%; padding: 9px 10px; border: 1px solid #ccd3cc; border-radius: 7px; font-size: 1rem;
+  }
+  .kp-card button { font-size: .9rem; padding: 9px 14px; border-radius: 7px; border: none;
+    background: #3c6e5e; color: #fff; cursor: pointer; margin-top: 10px; }
+  .kp-card button.kp-secondary { background: none; border: 1px solid #ccd3cc; color: #1c2b2a; }
+  .kp-card button.kp-danger { background: #c94d3a; }
+  .kp-err { color: #c94d3a; font-size: .82rem; margin-top: 6px; min-height: 1em; }
+  .kp-group { border: 1px solid #dfe4de; border-radius: 9px; padding: 10px 12px; margin-top: 12px; }
+  .kp-group-head { display: flex; gap: 8px; align-items: center; }
+  .kp-group-head input { flex: 1; font-weight: 600; }
+  .kp-pkg-row { display: flex; gap: 6px; align-items: center; margin-top: 8px; flex-wrap: wrap; }
+  .kp-pkg-row input[type=text] { flex: 1; min-width: 120px; }
+  .kp-pkg-row select { flex: 1; min-width: 120px; padding: 8px; border-radius: 7px; border: 1px solid #ccd3cc; }
+  .kp-pkg-row .kp-del { flex: none; width: 32px; height: 32px; padding: 0; background: none;
+    border: 1px solid #eecfc9; color: #c94d3a; border-radius: 7px; margin: 0; }
+  .kp-newcat { display: none; margin-top: 6px; }
+  details.kp-settings { margin-top: 16px; border-top: 1px solid #e6e9e5; padding-top: 10px; }
+  details.kp-settings summary { cursor: pointer; font-size: .85rem; color: #465650; }
+  .kp-status { font-size: .82rem; margin-top: 10px; white-space: pre-wrap; }
+  .kp-status.kp-ok { color: #2a7a4f; }
+  .kp-status.kp-warn { color: #a5490f; }
+  .kp-actions { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+</style>
+
+<button id="kp-fab" title="Kelola paket">⚙️</button>
+<div id="kp-overlay">
+  <div class="kp-card" id="kp-card"><!-- filled by JS --></div>
+</div>
+
+<script>
+(() => {
+  const PIN_HASH_KEY = 'soalin_kp_pin_hash';
+  const GH_KEY = 'soalin_kp_gh'; // { owner, repo, branch, token }
+  const overlay = document.getElementById('kp-overlay');
+  const card = document.getElementById('kp-card');
+  let unlockedThisSession = false;
+  let workingPackages = null; // edited copy, built on load
+
+  document.getElementById('kp-fab').addEventListener('click', () => {
+    overlay.classList.add('open');
+    if (unlockedThisSession) renderManager();
+    else renderPinScreen();
+  });
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('open'); });
+
+  async function sha256Hex(text) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+    return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  function getGhSettings() {
+    try { return JSON.parse(localStorage.getItem(GH_KEY) || 'null') || {}; } catch { return {}; }
+  }
+  function setGhSettings(obj) { localStorage.setItem(GH_KEY, JSON.stringify(obj)); }
+
+  function renderPinScreen() {
+    const hasPin = !!localStorage.getItem(PIN_HASH_KEY);
+    card.innerHTML = `
+      <h2>${hasPin ? 'Masuk Kelola Paket' : 'Buat PIN Kelola Paket'}</h2>
+      <div class="kp-sub">${hasPin
+        ? 'Panel ini terpisah dari password aplikasi — hanya kamu yang tahu PIN ini.'
+        : 'PIN ini cuma dicek di browser ini (bukan keamanan sungguhan — siapapun yang buka source bisa lihat kodenya), tapi cukup buat mencegah orang lain iseng klik-klik.'}</div>
+      <label for="kp-pin1">PIN</label>
+      <input type="password" inputmode="numeric" id="kp-pin1" placeholder="mis. 4-6 digit">
+      ${hasPin ? '' : `<label for="kp-pin2">Ulangi PIN</label><input type="password" inputmode="numeric" id="kp-pin2">`}
+      <div class="kp-err" id="kp-pin-err"></div>
+      <div class="kp-actions">
+        <button id="kp-pin-go">${hasPin ? 'Masuk' : 'Simpan PIN & masuk'}</button>
+        <button class="kp-secondary" id="kp-pin-cancel">Batal</button>
+      </div>
+    `;
+    document.getElementById('kp-pin-cancel').onclick = () => overlay.classList.remove('open');
+    document.getElementById('kp-pin-go').onclick = async () => {
+      const p1 = document.getElementById('kp-pin1').value;
+      const err = document.getElementById('kp-pin-err');
+      if (!p1) { err.textContent = 'PIN tidak boleh kosong.'; return; }
+      if (hasPin) {
+        const hash = await sha256Hex(p1);
+        if (hash !== localStorage.getItem(PIN_HASH_KEY)) { err.textContent = 'PIN salah.'; return; }
+      } else {
+        const p2 = document.getElementById('kp-pin2').value;
+        if (p1 !== p2) { err.textContent = 'PIN tidak sama.'; return; }
+        localStorage.setItem(PIN_HASH_KEY, await sha256Hex(p1));
+      }
+      unlockedThisSession = true;
+      renderManager();
+    };
+  }
+
+  async function loadPackagesForEdit() {
+    try {
+      const mod = await import(`./data/manifest.js?t=${Date.now()}`);
+      const pkgs = Array.isArray(mod.packages) ? mod.packages : [];
+      return JSON.parse(JSON.stringify(pkgs)); // deep copy, safe to mutate
+    } catch {
+      return [];
+    }
+  }
+
+  function groupByCategory(pkgs) {
+    const map = new Map();
+    for (const p of pkgs) {
+      if (!map.has(p.category)) map.set(p.category, []);
+      map.get(p.category).push(p);
+    }
+    return map;
+  }
+
+  async function renderManager() {
+    card.innerHTML = `<h2>Kelola Paket</h2><div class="kp-sub">Memuat data/manifest.js…</div>`;
+    workingPackages = await loadPackagesForEdit();
+
+    if (workingPackages.length === 0) {
+      card.innerHTML = `
+        <h2>Kelola Paket</h2>
+        <div class="kp-sub">Belum ada paket terdaftar di data/manifest.js (mode lama / belum pernah convert pakai kategori).</div>
+        <div class="kp-actions"><button class="kp-secondary" id="kp-close1">Tutup</button></div>
+      `;
+      document.getElementById('kp-close1').onclick = () => overlay.classList.remove('open');
+      return;
+    }
+
+    const allCategories = [...new Set(workingPackages.map((p) => p.category))];
+    const groups = groupByCategory(workingPackages);
+
+    let html = `<h2>Kelola Paket</h2>
+      <div class="kp-sub">Ganti nama kategori/paket atau pindah paket ke kategori lain. Ini cuma mengubah data/manifest.js — folder gambar & soal tidak disentuh sama sekali.</div>`;
+
+    groups.forEach((pkgs, category) => {
+      html += `<div class="kp-group" data-category="${escapeAttr(category)}">
+        <div class="kp-group-head">
+          <input type="text" class="kp-cat-name" value="${escapeAttr(category)}">
+        </div>`;
+      pkgs.forEach((p) => {
+        html += `<div class="kp-pkg-row" data-id="${escapeAttr(p.id)}">
+          <input type="text" class="kp-title" value="${escapeAttr(p.title)}">
+          <select class="kp-move">
+            ${allCategories.map((c) => `<option value="${escapeAttr(c)}" ${c === category ? 'selected' : ''}>${escapeAttr(c)}</option>`).join('')}
+            <option value="__new__">+ kategori baru…</option>
+          </select>
+          <button class="kp-del" title="Hapus dari daftar">✕</button>
+        </div>
+        <input type="text" class="kp-newcat" placeholder="Nama kategori baru">`;
+      });
+      html += `</div>`;
+    });
+
+    html += `
+      <details class="kp-settings">
+        <summary>Pengaturan penyimpanan (opsional — push otomatis ke GitHub)</summary>
+        <div class="kp-sub">Isi ini kalau mau tombol Simpan langsung commit ke repo. Kosongkan kalau mau tetap unduh file lalu push manual.</div>
+        <label>Owner/organisasi GitHub</label><input type="text" id="kp-gh-owner">
+        <label>Nama repo</label><input type="text" id="kp-gh-repo">
+        <label>Branch</label><input type="text" id="kp-gh-branch" placeholder="main">
+        <label>Personal Access Token (scope: Contents = Read and write, repo ini saja)</label>
+        <input type="password" id="kp-gh-token">
+      </details>
+
+      <div class="kp-actions">
+        <button id="kp-save">Simpan perubahan</button>
+        <button class="kp-secondary" id="kp-close2">Tutup</button>
+      </div>
+      <div class="kp-status" id="kp-status"></div>
+    `;
+
+    card.innerHTML = html;
+
+    const gh = getGhSettings();
+    if (document.getElementById('kp-gh-owner')) {
+      document.getElementById('kp-gh-owner').value = gh.owner || '';
+      document.getElementById('kp-gh-repo').value = gh.repo || '';
+      document.getElementById('kp-gh-branch').value = gh.branch || 'main';
+      document.getElementById('kp-gh-token').value = gh.token || '';
+    }
+
+    card.querySelectorAll('.kp-move').forEach((sel) => {
+      sel.addEventListener('change', () => {
+        const newcatInput = sel.closest('.kp-pkg-row').nextElementSibling;
+        if (sel.value === '__new__') { newcatInput.style.display = 'block'; newcatInput.focus(); }
+        else { newcatInput.style.display = 'none'; }
+      });
+    });
+
+    card.querySelectorAll('.kp-del').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const row = btn.closest('.kp-pkg-row');
+        const newcat = row.nextElementSibling;
+        row.dataset.deleted = '1';
+        row.style.opacity = '0.35';
+        btn.disabled = true;
+      });
+    });
+
+    document.getElementById('kp-close2').onclick = () => overlay.classList.remove('open');
+    document.getElementById('kp-save').onclick = doSave;
+  }
+
+  function escapeAttr(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function buildManifestContent(packages) {
+    packages.sort((a, b) => a.category.localeCompare(b.category) || a.title.localeCompare(b.title));
+    return `// File ini DIKELOLA lewat panel "Kelola Paket" di dalam app (dan/atau scripts/convert-docx.js).
+// Berisi daftar semua "paket soal". Field "id" adalah nama folder asli
+// (data/packages/<id>/ dan images/packages/<id>/) dan TIDAK PERNAH berubah
+// walau "category"/"title" diganti dari panel ini — jadi ganti nama/pindah
+// kategori aman, tidak pernah memindahkan/menghapus file gambar atau soal.
+
+export const packages = ${JSON.stringify(packages, null, 2)};
+`;
+  }
+
+  async function doSave() {
+    const status = document.getElementById('kp-status');
+    status.className = 'kp-status';
+    status.textContent = 'Menyimpan…';
+
+    const byId = new Map(workingPackages.map((p) => [p.id, p]));
+    const rows = card.querySelectorAll('.kp-pkg-row');
+    const finalPackages = [];
+
+    // category renames: map old category text -> new text, per group block
+    card.querySelectorAll('.kp-group').forEach((groupEl) => {
+      const oldCategory = groupEl.dataset.category;
+      const newCategoryName = groupEl.querySelector('.kp-cat-name').value.trim() || oldCategory;
+      groupEl.querySelectorAll('.kp-pkg-row').forEach((row) => {
+        if (row.dataset.deleted === '1') return;
+        const id = row.dataset.id;
+        const entry = byId.get(id);
+        if (!entry) return;
+        const title = row.querySelector('.kp-title').value.trim() || entry.title;
+        const moveSel = row.querySelector('.kp-move');
+        let category;
+        if (moveSel.value === '__new__') {
+          const newcatVal = row.nextElementSibling.value.trim();
+          category = newcatVal || newCategoryName;
+        } else if (moveSel.value === oldCategory) {
+          category = newCategoryName; // stayed in this group, but group itself may have been renamed
+        } else {
+          category = moveSel.value;
+        }
+        finalPackages.push({ ...entry, title, category });
+      });
+    });
+
+    if (finalPackages.length === 0) {
+      status.className = 'kp-status kp-warn';
+      status.textContent = 'Semua paket ditandai hapus — tidak jadi disimpan. Batalkan penghapusan kalau ini tidak sengaja.';
+      return;
+    }
+
+    const content = buildManifestContent(finalPackages);
+
+    const owner = (document.getElementById('kp-gh-owner')?.value || '').trim();
+    const repo = (document.getElementById('kp-gh-repo')?.value || '').trim();
+    const branch = (document.getElementById('kp-gh-branch')?.value || 'main').trim();
+    const token = (document.getElementById('kp-gh-token')?.value || '').trim();
+
+    if (owner && repo && token) {
+      setGhSettings({ owner, repo, branch, token });
+      try {
+        status.textContent = 'Mengambil versi terbaru dari GitHub…';
+        const apiBase = `https://api.github.com/repos/${owner}/${repo}/contents/data/manifest.js`;
+        const getRes = await fetch(`${apiBase}?ref=${encodeURIComponent(branch)}`, {
+          headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github+json' },
+        });
+        if (!getRes.ok) throw new Error(`GET gagal (${getRes.status}): ${await getRes.text()}`);
+        const getData = await getRes.json();
+
+        status.textContent = 'Mengirim commit…';
+        const putRes = await fetch(apiBase, {
+          method: 'PUT',
+          headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            message: 'Kelola Paket: update data/manifest.js',
+            content: btoa(unescape(encodeURIComponent(content))),
+            sha: getData.sha,
+            branch,
+          }),
+        });
+        if (!putRes.ok) throw new Error(`PUT gagal (${putRes.status}): ${await putRes.text()}`);
+        status.className = 'kp-status kp-ok';
+        status.textContent = 'Berhasil di-commit ke GitHub. Refresh halaman ini untuk lihat perubahan di app.';
+      } catch (e) {
+        status.className = 'kp-status kp-warn';
+        status.textContent = `Gagal push otomatis: ${e.message}\nFile tetap diunduh sebagai cadangan.`;
+        downloadManifest(content);
+      }
+    } else {
+      downloadManifest(content);
+      status.className = 'kp-status kp-ok';
+      status.textContent = 'File data/manifest.js diunduh. Push manual: buka repo di GitHub (bisa lewat web editor / Codespaces), timpa data/manifest.js dengan file ini, lalu commit.';
+    }
+  }
+
+  function downloadManifest(content) {
+    const blob = new Blob([content], { type: 'text/javascript' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'manifest.js';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+  }
+})();
+</script>
+
 </body>
 </html>
