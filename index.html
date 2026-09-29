@@ -2917,17 +2917,49 @@ boot();
 
 
 // ── Password Gate ─────────────────────────────────────────────────────────
-const GATE_KEY   = "soalinprem_unlocked";
-const GATE_PASS  = "yangkemarin"; // ← ganti password di sini
+// Password TIDAK lagi disimpan plaintext. Yang disimpan: salt + hash PBKDF2-SHA256.
+// Ganti password: buka console di halaman ini, jalankan  gateMake("password-baru")
+// lalu tempel salt & hash yang dicetak ke GATE_SALT / GATE_HASH di bawah.
+const GATE_KEY  = "soalinprem_unlocked";
+const GATE_ITER = 600000;
+const GATE_SALT = "bd8bdd67c590ff783f60f4c72614f98b";
+const GATE_HASH = "9c5634c906801fc0b82a72043749c8325f4c62c94088c9a9070190bb808ed9c6";
 
-function gateSubmit() {
-  const val = document.getElementById("gate-input").value;
+const _hex   = b => [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, "0")).join("");
+const _unhex = s => Uint8Array.from(s.match(/../g), x => parseInt(x, 16));
+async function pbkdf2Hex(pw, saltHex, iter) {
+  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveBits"]);
+  return _hex(await crypto.subtle.deriveBits(
+    { name: "PBKDF2", hash: "SHA-256", salt: _unhex(saltHex), iterations: iter }, key, 256));
+}
+function safeEq(a, b) {            // constant-time compare
+  if (a.length !== b.length) return false;
+  let d = 0;
+  for (let i = 0; i < a.length; i++) d |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return d === 0;
+}
+async function gateMake(pw) {      // helper buat bikin hash baru (dipakai manual dari console)
+  const s = _hex(crypto.getRandomValues(new Uint8Array(16)));
+  console.log(`const GATE_SALT = "${s}";\nconst GATE_HASH = "${await pbkdf2Hex(pw, s, GATE_ITER)}";`);
+}
+
+async function gateSubmit() {
   const inp = document.getElementById("gate-input");
   const err = document.getElementById("gate-err");
-  if (val === GATE_PASS) {
+  const btn = document.getElementById("gate-btn");
+  if (!window.crypto || !crypto.subtle) {
+    err.textContent = "Butuh HTTPS atau localhost (Web Crypto tidak tersedia).";
+    return;
+  }
+  btn.disabled = true;
+  let ok = false;
+  try { ok = safeEq(await pbkdf2Hex(inp.value, GATE_SALT, GATE_ITER), GATE_HASH); } catch { /* noop */ }
+  btn.disabled = false;
+  if (ok) {
     try { localStorage.setItem(GATE_KEY, "1"); } catch { /* noop */ }
     document.getElementById("gate-overlay").classList.add("hidden");
     inp.classList.remove("error");
+    inp.value = "";
     err.textContent = "";
   } else {
     inp.classList.add("error");
@@ -3030,9 +3062,37 @@ gateInit();
   });
   overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('open'); });
 
+  // Legacy (unsalted SHA-256) — hanya dipakai buat verifikasi PIN lama lalu di-upgrade.
   async function sha256Hex(text) {
     const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
     return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
+  }
+  const PIN_ITER = 600000;
+  const toHex = (b) => [...new Uint8Array(b)].map((x) => x.toString(16).padStart(2, '0')).join('');
+  const fromHex = (s) => Uint8Array.from(s.match(/../g), (x) => parseInt(x, 16));
+  async function pbkdf2(pin, saltHex, iter) {
+    const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(pin), 'PBKDF2', false, ['deriveBits']);
+    return toHex(await crypto.subtle.deriveBits(
+      { name: 'PBKDF2', hash: 'SHA-256', salt: fromHex(saltHex), iterations: iter }, key, 256));
+  }
+  function safeEq(a, b) {
+    if (a.length !== b.length) return false;
+    let d = 0;
+    for (let i = 0; i < a.length; i++) d |= a.charCodeAt(i) ^ b.charCodeAt(i);
+    return d === 0;
+  }
+  async function makePinRecord(pin) {          // "iter$salt$hash"
+    const salt = toHex(crypto.getRandomValues(new Uint8Array(16)));
+    return `${PIN_ITER}${'$'}${salt}${'$'}${await pbkdf2(pin, salt, PIN_ITER)}`;
+  }
+  async function checkPin(pin, rec) {
+    if (!rec.includes('$')) {                    // record lama → cek SHA-256, lalu upgrade
+      if (!safeEq(await sha256Hex(pin), rec)) return false;
+      localStorage.setItem(PIN_HASH_KEY, await makePinRecord(pin));
+      return true;
+    }
+    const [it, salt, hash] = rec.split('$');
+    return safeEq(await pbkdf2(pin, salt, +it), hash);
   }
 
   function getGhSettings() {
@@ -3062,12 +3122,11 @@ gateInit();
       const err = document.getElementById('kp-pin-err');
       if (!p1) { err.textContent = 'PIN tidak boleh kosong.'; return; }
       if (hasPin) {
-        const hash = await sha256Hex(p1);
-        if (hash !== localStorage.getItem(PIN_HASH_KEY)) { err.textContent = 'PIN salah.'; return; }
+        if (!(await checkPin(p1, localStorage.getItem(PIN_HASH_KEY)))) { err.textContent = 'PIN salah.'; return; }
       } else {
         const p2 = document.getElementById('kp-pin2').value;
         if (p1 !== p2) { err.textContent = 'PIN tidak sama.'; return; }
-        localStorage.setItem(PIN_HASH_KEY, await sha256Hex(p1));
+        localStorage.setItem(PIN_HASH_KEY, await makePinRecord(p1));
       }
       unlockedThisSession = true;
       renderManager();
