@@ -2922,8 +2922,8 @@ boot();
 // lalu tempel salt & hash yang dicetak ke GATE_SALT / GATE_HASH di bawah.
 const GATE_KEY  = "soalinprem_unlocked";
 const GATE_ITER = 600000;
-const GATE_SALT = "bd8bdd67c590ff783f60f4c72614f98b";
-const GATE_HASH = "9c5634c906801fc0b82a72043749c8325f4c62c94088c9a9070190bb808ed9c6";
+const GATE_SALT = "c89a455214eef4ddca57faa4d0f30669";
+const GATE_HASH = "f87316ddfb974ebc47a38346f670d8b670d19c28c3c960e9b2e3a4abe1d78a65";
 
 const _hex   = b => [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, "0")).join("");
 const _unhex = s => Uint8Array.from(s.match(/../g), x => parseInt(x, 16));
