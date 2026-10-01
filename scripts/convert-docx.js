@@ -233,38 +233,50 @@ if (result.messages?.length) {
 // Jika tidak ada heading Bagian 2, seluruh dokumen diparsing sebagai Bagian 1.
 
 const part2HeadingRegex = /bagian\s*2|gagal\s+diperbaiki/i;
+const part3HeadingRegex = /bagian\s*3|soal\s+isian/i;
 
-// Cari index awal Bagian 2 (heading h1/h2/h3 yang cocok + tabel setelahnya)
+// Cari index awal Bagian 2 & Bagian 3 (heading h1/h2/h3 yang cocok)
 function splitParts(html) {
   // Cari semua heading h1/h2/h3 untuk tanda batas
   const headingRe = /<(h[1-3])[^>]*>([\s\S]*?)<\/\1>/gi;
   let lastPart2HeadingEnd = -1;
+  let lastPart3HeadingEnd = -1;
   let match;
   while ((match = headingRe.exec(html)) !== null) {
     const headingText = match[2].replace(/<[^>]+>/g, "").trim();
-    if (part2HeadingRegex.test(headingText)) {
-      lastPart2HeadingEnd = match.index;
-    }
+    if (part2HeadingRegex.test(headingText)) lastPart2HeadingEnd = match.index;
+    if (part3HeadingRegex.test(headingText)) lastPart3HeadingEnd = match.index;
   }
+  if (lastPart3HeadingEnd >= 0 && lastPart3HeadingEnd < lastPart2HeadingEnd) lastPart3HeadingEnd = -1; // urutan gak wajar, abaikan
 
   if (lastPart2HeadingEnd < 0) {
-    // Tidak ada Bagian 2 — cek apakah ada <table> saja
-    const tableIdx = html.indexOf("<table");
-    if (tableIdx < 0) return { part1Html: html, part2Html: "" };
+    // Tidak ada Bagian 2 — cek apakah ada <table>, tapi jangan lewati heading
+    // Bagian 3 kalau sudah ketemu, atau tabel isian ikut kesedot jadi Bagian 2.
+    const searchHtml = lastPart3HeadingEnd >= 0 ? html.slice(0, lastPart3HeadingEnd) : html;
+    const tableIdx = searchHtml.indexOf("<table");
+    if (tableIdx < 0) {
+      return {
+        part1Html: lastPart3HeadingEnd < 0 ? html : html.substring(0, lastPart3HeadingEnd),
+        part2Html: "",
+        part3Html: lastPart3HeadingEnd < 0 ? "" : html.substring(lastPart3HeadingEnd),
+      };
+    }
     // Ada tabel tapi tidak ada heading Bagian 2 — anggap semua sebelum tabel = Bagian 1
     return {
       part1Html: html.substring(0, tableIdx),
-      part2Html: html.substring(tableIdx),
+      part2Html: html.substring(tableIdx, lastPart3HeadingEnd < 0 ? undefined : lastPart3HeadingEnd),
+      part3Html: lastPart3HeadingEnd < 0 ? "" : html.substring(lastPart3HeadingEnd),
     };
   }
 
   return {
     part1Html: html.substring(0, lastPart2HeadingEnd),
-    part2Html: html.substring(lastPart2HeadingEnd),
+    part2Html: lastPart3HeadingEnd < 0 ? html.substring(lastPart2HeadingEnd) : html.substring(lastPart2HeadingEnd, lastPart3HeadingEnd),
+    part3Html: lastPart3HeadingEnd < 0 ? "" : html.substring(lastPart3HeadingEnd),
   };
 }
 
-const { part1Html, part2Html } = splitParts(html);
+const { part1Html, part2Html, part3Html } = splitParts(html);
 
 // --- 3. Helper: bersihkan teks dari tag HTML ---
 function cleanText(fragment) {
@@ -548,114 +560,71 @@ function parsePart2(html, startingQNumber) {
   return brokenQuestions;
 }
 
-// --- 6. Acak opsi + kunci jawaban, tapi jaga distribusi kunci tetap rata ---
-// Kenapa perlu: kalau urutan A/B/C/D/E ditulis apa adanya oleh penulis soal,
-// kunci jawaban seringkali menumpuk di huruf tertentu (contoh: kebanyakan C
-// atau E). Fungsi ini mengacak urutan opsi tiap soal (isi opsi ikut pindah
-// bersama statusnya benar/salah), lalu membagikan "slot kunci" (A/B/C/D/E)
-// secara merata ke semua soal yang punya 5 opsi lengkap — sehingga total
-// count tiap huruf sebagai kunci jawaban selisihnya maksimal 1.
-//
-// Aman untuk penjelasan (Penjelasan: ...) karena penjelasan di format ini
-// merujuk ke ISI opsi (nama/istilah), bukan ke huruf opsi — jadi tidak perlu
-// diubah saat opsi diacak ulang.
+// --- 5b. Parse Bagian 3 — tabel soal isian ---
+// Kolom: 0=No, 1=Soal, 2=Jawaban
+// Output: { id, question, answer, isIsian: true }
 
-function shuffleArray(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
+function parsePart3(html, startingQNumber) {
+  const isianQuestions = [];
+  const tableRegex = /<table[\s\S]*?<\/table>/gi;
+  let tableMatch;
 
-function letterKey(options) {
-  return Object.keys(options).sort().join(",");
-}
+  while ((tableMatch = tableRegex.exec(html)) !== null) {
+    const tableHtml = tableMatch[0];
+    const rowRegex = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+    let rowMatch;
+    let isFirstRow = true;
 
-function rebalanceAnswerDistribution(questions) {
-  // Hanya soal normal (bukan isBroken), punya kunci, dan opsi utuh yang diproses.
-  const eligible = questions.filter(
-    (q) =>
-      !q.isBroken &&
-      q.answer &&
-      q.options &&
-      Object.keys(q.options).length >= 2 &&
-      q.options[q.answer] !== undefined
-  );
-  if (eligible.length === 0) return { changed: 0, groups: {} };
+    while ((rowMatch = rowRegex.exec(tableHtml)) !== null) {
+      const rowHtml = rowMatch[1];
+      const cellRegex = /<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi;
+      const cells = [];
+      let cellMatch;
+      while ((cellMatch = cellRegex.exec(rowHtml)) !== null) {
+        cells.push(cellMatch[1]);
+      }
 
-  // Kelompokkan berdasarkan set huruf opsi (mis. "A,B,C,D,E") — hanya
-  // kelompok dengan set huruf yang sama yang dibagi rata bersama, supaya
-  // soal dengan jumlah opsi berbeda tidak saling mengacaukan.
-  const groups = new Map();
-  for (const q of eligible) {
-    const key = letterKey(q.options);
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(q);
-  }
+      if (cells.length < 2) continue;
 
-  let changed = 0;
-  const summary = {};
+      const firstCellText = cleanText(cells[0]);
+      if (isFirstRow || /^no\.?$/i.test(firstCellText)) {
+        isFirstRow = false;
+        if (!/^\d+$/.test(firstCellText)) continue; // header, bukan baris data
+      }
+      isFirstRow = false;
 
-  for (const [key, group] of groups.entries()) {
-    const letters = key.split(",");
-    const n = group.length;
-    const base = Math.floor(n / letters.length);
-    const rem = n % letters.length;
+      // col 0: nomor asli, col 1: teks soal, col 2: kunci jawaban (teks bebas)
+      const origNo = firstCellText;
+      const questionText = cleanText(cells[1] || "");
+      const answerText = cleanText(cells[2] || "");
+      const questionImages = extractImages(cells[1] || "");
 
-    // Acak huruf mana saja yang kebagian "jatah lebih" (+1), supaya adil
-    // antar-huruf tiap kali file di-convert ulang.
-    const lettersShuffled = shuffleArray([...letters]);
-    const countPerLetter = {};
-    letters.forEach((L) => (countPerLetter[L] = base));
-    for (let i = 0; i < rem; i++) countPerLetter[lettersShuffled[i]] += 1;
+      if (!questionText) continue;
 
-    // Bangun pool target kunci sesuai jatah, lalu acak urutannya.
-    let pool = [];
-    letters.forEach((L) => {
-      for (let k = 0; k < countPerLetter[L]; k++) pool.push(L);
-    });
-    shuffleArray(pool);
-
-    // Acak urutan soal supaya assignment target tidak berkorelasi dengan
-    // urutan asli soal di dokumen.
-    const groupShuffled = shuffleArray([...group]);
-
-    groupShuffled.forEach((q, idx) => {
-      const targetLetter = pool[idx];
-      const correctText = q.options[q.answer];
-      const otherEntries = letters
-        .filter((L) => L !== q.answer)
-        .map((L) => q.options[L]);
-      shuffleArray(otherEntries);
-
-      const newOptions = {};
-      let oi = 0;
-      letters.forEach((L) => {
-        if (L === targetLetter) {
-          newOptions[L] = correctText;
-        } else {
-          newOptions[L] = otherEntries[oi++];
-        }
+      const qNum = startingQNumber + isianQuestions.length + 1;
+      isianQuestions.push({
+        id: `QI${origNo || qNum}`,
+        category: "Soal Isian",
+        question: questionText,
+        questionImages,
+        options: {},
+        answer: answerText,
+        explanation: "",
+        explanationImages: [],
+        isBroken: false,
+        isIsian: true,
       });
-
-      q.options = newOptions;
-      q.answer = targetLetter;
-      changed += 1;
-    });
-
-    summary[key] = countPerLetter;
+    }
   }
 
-  return { changed, groups: summary };
+  return isianQuestions;
 }
 
 // --- 7. Gabungkan hasil kedua bagian ---
 const part1Questions = parsePart1(part1Html);
-const { changed: rebalancedCount, groups: rebalanceSummary } =
-  rebalanceAnswerDistribution(part1Questions);
 const part2Questions = parsePart2(part2Html, part1Questions.length);
-const allQuestions = [...part1Questions, ...part2Questions];
+const part3Questions = parsePart3(part3Html, part1Questions.length + part2Questions.length);
+const allQuestions = [...part1Questions, ...part2Questions, ...part3Questions];
 
 // --- 8. Tulis hasil ke questions.js (mode lama: data/questions.js, mode paket: data/packages/<id>/questions.js) ---
 const outPath = path.join(dataDir, "questions.js");
@@ -666,6 +635,10 @@ const fileContent = `// File ini DIBUAT OTOMATIS oleh scripts/convert-docx.js da
 // Soal dengan isBroken: true = soal rusak dari Bagian 2 (tabel).
 // Di app ditampilkan sebagai kartu tap-to-reveal — tekan kartu untuk melihat
 // gambar penjelasan (explanationImages).
+//
+// Soal dengan isIsian: true = soal isian dari Bagian 3 (tabel).
+// Di app ditampilkan sebagai kartu jawaban-singkat: textarea + tombol kirim,
+// lalu mereveal kunci jawaban (field 'answer', berupa teks bebas).
 
 export const questions = ${JSON.stringify(allQuestions, null, 2)};
 `;
@@ -713,15 +686,11 @@ export const packages = ${JSON.stringify(packages, null, 2)};
 
 const part1Count = part1Questions.length;
 const part2Count = part2Questions.length;
+const part3Count = part3Questions.length;
 console.log(`Selesai. ${allQuestions.length} soal berhasil diparse.`);
 console.log(`  Bagian 1 (normal)  : ${part1Count} soal`);
 console.log(`  Bagian 2 (rusak)   : ${part2Count} soal`);
-if (rebalancedCount > 0) {
-  console.log(`  Opsi diacak & kunci diratakan untuk ${rebalancedCount} soal:`);
-  for (const [key, counts] of Object.entries(rebalanceSummary)) {
-    console.log(`    [${key}] ->`, counts);
-  }
-}
+console.log(`  Bagian 3 (isian)   : ${part3Count} soal`);
 if (usePackageMode) {
   console.log(`  Kategori           : ${kategoriArg}`);
   console.log(`  Paket              : ${paketTitle} (id: ${packageId})`);

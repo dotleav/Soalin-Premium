@@ -6,7 +6,7 @@
   "scripts": {
     "convert": "node scripts/convert-docx.js",
     "delete": "node scripts/delete-package.js",
-    "audio-manifest": "node scripts/generate-audio-manifest.js"
+    "audio-manifest": "node scripts/generate-audio-manifest.cjs"
   },
   "dependencies": {
     "mammoth": "^1.7.2",

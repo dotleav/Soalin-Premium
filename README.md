@@ -49,7 +49,7 @@ Pengguna Windows yang pakai `soalin.bat`/`convert.ps1` (GUI) juga bisa isi kolom
 
 ## Format docx
 
-Parser membaca dua bagian dalam satu file docx: soal normal (Bagian 1) dan soal rusak (Bagian 2).
+Parser membaca tiga bagian dalam satu file docx: soal normal (Bagian 1), soal rusak (Bagian 2), dan soal isian (Bagian 3).
 
 ### Bagian 1 — soal MCQ normal
 
@@ -92,6 +92,18 @@ Bagian ini ditandai dengan heading `## Bagian 2` atau `## Soal yang Gagal Diperb
 
 Di app, soal rusak tidak masuk ke quiz — melainkan muncul sebagai kartu tap-to-reveal di Mode Latihan. Tekan kartunya, gambar penjelasan dari kolom ketiga akan muncul. Tekan lagi untuk tutup. Ini biar kamu tetap bisa belajar dari soal-soal itu meskipun tidak bisa dijawab secara formal.
 
+### Bagian 3 — soal isian
+
+Kalau mau bikin soal jawaban-singkat (bukan pilihan ganda), masukkan ke Bagian 3 dalam format tabel tiga kolom:
+
+| No | Soal | Jawaban |
+|----|------|---------|
+| 9  | Sebutkan gejala klasik gagal ginjal pra renal. | Oliguria, azotemia, hipotensi |
+
+Bagian ini ditandai dengan heading `## Bagian 3` atau `## Soal Isian` di atas tabelnya.
+
+Di app, soal isian tampil sebagai kartu berisi pertanyaan, kotak teks, dan tombol ▶ untuk mengirim jawaban (Enter tanpa Shift juga bisa). Setelah dikirim, jawabanmu masuk ke kartu dan kunci jawaban (kolom ketiga) langsung terbuka di bawahnya. Kartu yang sudah terjawab terkunci — tidak bisa diedit lagi — dan cuma bisa dikerjakan ulang lewat tombol Reset. Soal isian tidak dinilai benar/salah otomatis dan tidak ikut Mode Tentamen — sifatnya buat latihan mengingat, bukan pilihan ganda.
+
 ## Mode di app
 
 Ada dua mode yang bisa dipilih dari mode bar.
@@ -109,7 +121,7 @@ Tingkat kesulitan Mode Tentamen mengatur durasi timer per soal:
 | 🦥 Folivora | 5 menit |
 | 🐌 Bekicot | tanpa timer |
 
-Soal rusak (Bagian 2) tidak ikut masuk ke Mode Tentamen.
+Soal rusak (Bagian 2) dan soal isian (Bagian 3) tidak ikut masuk ke Mode Tentamen.
 
 ## Audio jawaban benar/salah
 
