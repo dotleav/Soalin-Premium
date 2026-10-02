@@ -99,8 +99,8 @@ export const questions = [
       "D": "Ventrikular",
       "E": "Junctional"
     },
-    "answer": "",
-    "explanation": "[PERLU VERIFIKASI KUNCI JAWABAN MANUAL] Anotasi sumber muncul pada dua opsi berbeda (A dan D) sehingga kunci tidak bisa dipastikan otomatis; secara fisiologis SA node memiliki laju pelepasan impuls tertinggi (60-100x/menit) dibanding AV node, berkas His, atau serabut Purkinje.",
+    "answer": "A",
+    "explanation": "SA node memiliki laju pelepasan impuls tertinggi (60–100x/menit), lebih tinggi daripada AV node/junctional (40–60x/menit) dan ventrikular/serabut Purkinje (20–40x/menit), sehingga menjadi pacemaker normal jantung.",
     "explanationImages": [],
     "isBroken": false
   },
@@ -222,8 +222,8 @@ export const questions = [
       "D": "D",
       "E": "E"
     },
-    "answer": "",
-    "explanation": "[PERLU VERIFIKASI KUNCI JAWABAN MANUAL] Soal bergantung pada gambar histologi yang tidak tersedia dalam teks, sehingga kunci jawaban tidak bisa dipastikan tanpa melihat gambar aslinya (secara umum, sel yang berperan dalam pertukaran gas adalah pneumosit tipe I/sel alveolar tipe 1).",
+    "answer": "D",
+    "explanation": "Pertukaran gas terjadi melalui dinding alveolus yang sangat tipis. Sel yang melapisinya dan berperan dalam difusi gas adalah pneumosit tipe I (sel gepeng dengan inti pipih memanjang), ditunjukkan huruf D. C = makrofag alveolar, A = eritrosit.",
     "explanationImages": [],
     "isBroken": false
   },
@@ -946,8 +946,8 @@ export const questions = [
       "D": "Jumlah volume cairan",
       "E": "Defek (ASD, VSD)"
     },
-    "answer": "",
-    "explanation": "[PERLU VERIFIKASI KUNCI JAWABAN MANUAL] Semua opsi (kondisi ruang jantung, stenosis katup, tumor, volume cairan/efusi, dan defek septal) sebenarnya dapat dinilai dengan ekokardiografi, sehingga soal ini ambigu dan kuncinya tidak dapat ditentukan dengan pasti tanpa konteks tambahan dari materi kuliah aslinya.",
+    "answer": "E",
+    "explanation": "Pada gambar (echocardiography 4 ruang dengan color Doppler), panah menunjukkan aliran abnormal melalui septum, yaitu defek septum (ASD/VSD).",
     "explanationImages": [],
     "isBroken": false
   },
@@ -1017,8 +1017,8 @@ export const questions = [
       "C": "C",
       "D": "D"
     },
-    "answer": "",
-    "explanation": "[PERLU VERIFIKASI KUNCI JAWABAN MANUAL] Soal bergantung pada gambar yang tidak tersedia, dan opsi pada dokumen sumber juga tidak lengkap (hanya A-D, opsi E tidak ada). Secara umum, kontraksi dinding arteri dimungkinkan oleh tunica media (lapisan otot polos).",
+    "answer": "C",
+    "explanation": "Kontraksi dinding arteri dimungkinkan oleh sel otot polos di tunica media (C, inti memanjang). A/B = tunica intima (endotel dan lamina elastika interna), D = tunica adventitia.",
     "explanationImages": [],
     "isBroken": false
   },
@@ -1509,17 +1509,17 @@ export const questions = [
   {
     "id": "Q88",
     "category": "",
-    "question": "Diketahui volume tidal adalah 500 ml, dead space sebesar 150ml, frekuensi napas adalah 16x/menit. Berapakah minute ventilation-nya?",
+    "question": "Diketahui volume tidal adalah 500 ml, dead space sebesar 150ml, frekuensi napas adalah 16x/menit. Berapakah ventilasi alveolar per menit-nya?",
     "questionImages": [],
     "options": {
       "A": "10000 ml",
       "B": "11400 ml",
       "C": "2400 ml",
-      "D": "6600 ml (harusnya 5600ml)",
+      "D": "5600 ml",
       "E": "9000 ml"
     },
-    "answer": "",
-    "explanation": "[PERLU VERIFIKASI KUNCI JAWABAN MANUAL] Perhitungan pada soal ini tidak menghasilkan angka yang sesuai dengan salah satu opsi yang tersedia, baik menggunakan rumus ventilasi semenit (VT x f = 8000 mL) maupun ventilasi alveolus ((VT-VD) x f = 5600 mL) — kemungkinan ada kesalahan penulisan pada soal atau opsi jawaban sumber, sehingga perlu dicek ulang.",
+    "answer": "D",
+    "explanation": "Ventilasi alveolar per menit = (VT − VD) × f = (500 − 150) × 16 = 5600 ml. Sebagai pembanding, minute ventilation total = VT × f = 8000 ml.",
     "explanationImages": [],
     "isBroken": false
   },
@@ -1668,11 +1668,11 @@ export const questions = [
       "A": "Vaskularisasi kanan menurun, ronki basah kanan (-), wheezing (-)",
       "B": "Vaskularisasi kanan (+), ronki basah (-), wheezing (-)",
       "C": "Vaskularisasi kanan (-), ronki basah (-), wheezing (-)",
-      "D": "Bronkovaskularisasi (+), ronki basah (-), wheezing (-)",
+      "D": "Bronkovaskularisasi (+), ronki basah (+), wheezing (-)",
       "E": "Bronkovaskularisasi (-), ronki basah (-), wheezing (-)"
     },
-    "answer": "",
-    "explanation": "[PERLU VERIFIKASI KUNCI JAWABAN MANUAL] Seluruh opsi mencantumkan \"ronki basah (-)\" padahal secara klinis pneumonia umumnya disertai ronki basah positif, sehingga kemungkinan ada kesalahan transkripsi tanda (+/-) pada soal sumber; kunci tidak dapat dipastikan tanpa memeriksa ulang materi aslinya.",
+    "answer": "D",
+    "explanation": "Pada bronkopneumonia ditemukan bronkovaskularisasi meningkat dan ronki basah (+) pada sisi yang terkena, tanpa wheezing.",
     "explanationImages": [],
     "isBroken": false
   },
@@ -1870,7 +1870,7 @@ export const questions = [
   {
     "id": "Q109",
     "category": "",
-    "question": "Struktur apakah yang memisahkan Nasofaring dan Cavum timpani",
+    "question": "Struktur apakah yang menghubungkan Nasofaring dan Cavum timpani",
     "questionImages": [],
     "options": {
       "A": "Torus Tubarius",
@@ -1879,8 +1879,8 @@ export const questions = [
       "D": "Ostium Tuba Auditiva",
       "E": "Isthmus Faucium"
     },
-    "answer": "",
-    "explanation": "[PERLU VERIFIKASI KUNCI JAWABAN MANUAL] Logika pertanyaan kurang jelas karena nasofaring dan cavum timpani sebenarnya dihubungkan (bukan dipisahkan) oleh tuba auditiva, sehingga kunci tidak dapat ditentukan dengan pasti tanpa konteks materi kuliah aslinya.",
+    "answer": "D",
+    "explanation": "Ostium (pharyngeum) tuba auditiva membuka ke nasofaring dan melalui tuba auditiva menghubungkannya dengan cavum timpani.",
     "explanationImages": [],
     "isBroken": false
   },
@@ -1961,11 +1961,11 @@ export const questions = [
       "A": "Arteri ethmoidalis anterior",
       "B": "Arteri ethmoidalis posterior",
       "C": "Plexus kiesselbach anterior",
-      "D": "Plexus kiesselbach posterior",
+      "D": "Plexus Kiesselbach posterior (Woodruff)",
       "E": "Arteri palatina major"
     },
-    "answer": "",
-    "explanation": "[PERLU VERIFIKASI KUNCI JAWABAN MANUAL] Pilihan jawaban tidak mencakup arteria sphenopalatina (sumber vaskularisasi utama pleksus vena posterior/Woodruff), sehingga tidak ada opsi yang secara pasti sesuai; perlu dicek ulang terhadap materi kuliah anatomi aslinya.",
+    "answer": "D",
+    "explanation": "Anyaman pembuluh darah di bagian posterior cavum nasi adalah pleksus Woodruff (disebut juga pleksus Kiesselbach posterior), sedangkan Kiesselbach (Little area) berada di septum anterior.",
     "explanationImages": [],
     "isBroken": false
   },
@@ -2204,8 +2204,8 @@ export const questions = [
       "D": "D",
       "E": "E"
     },
-    "answer": "",
-    "explanation": "Karena emang A",
+    "answer": "A",
+    "explanation": "Vasa vasorum terdapat di tunica adventitia (A), jaringan ikat longgar di bagian terluar dinding pembuluh, yang memberi nutrisi pada dinding pembuluh besar.",
     "explanationImages": [],
     "isBroken": false
   },
@@ -2376,8 +2376,8 @@ export const questions = [
       "D": "D",
       "E": "E"
     },
-    "answer": "",
-    "explanation": "[PERLU VERIFIKASI KUNCI JAWABAN MANUAL] Soal bergantung pada gambar histologi alveolus yang tidak tersedia dalam teks, sehingga kunci jawaban tidak dapat dipastikan tanpa gambar aslinya (secara umum, sel fagosit di alveolus adalah makrofag alveolar/dust cell).",
+    "answer": "C",
+    "explanation": "Sel yang memfagosit di alveolus adalah makrofag alveolar (dust cell), tampak di lumen dengan sitoplasma berpigmen, ditunjukkan huruf C.",
     "explanationImages": [],
     "isBroken": false
   },
@@ -2421,14 +2421,14 @@ export const questions = [
     "question": "Apa batas lateral kanan jantung pada foto thorax ?",
     "questionImages": [],
     "options": {
-      "A": "Atrium kanan dan Ventrikel kanan",
+      "A": "Atrium kanan",
       "B": "Ventrikel kanan",
       "C": "Atrium kiri",
       "D": "Vena cava superior",
       "E": "Atrium kiri dan Ventrikel kiri"
     },
-    "answer": "",
-    "explanation": "[PERLU VERIFIKASI KUNCI JAWABAN MANUAL] Tidak ada opsi yang secara tepat menyatakan \"atrium kanan\" saja sebagai pembentuk batas kanan jantung sesuai teori radiologi standar, sehingga kunci tidak dapat dipastikan tanpa konteks materi kuliah aslinya.",
+    "answer": "A",
+    "explanation": "Pada foto thorax PA, batas kanan jantung dibentuk oleh atrium kanan (bagian atasnya berbatasan dengan vena cava superior sebagai batas mediastinum).",
     "explanationImages": [],
     "isBroken": false
   },
