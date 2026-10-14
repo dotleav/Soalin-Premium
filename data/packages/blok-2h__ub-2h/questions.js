@@ -26,7 +26,7 @@ export const questions = [
     "answer": "D",
     "explanation": "Dosis standar untuk alteplase (rtPA) intravena pada stroke iskemik akut adalah 0,9 mg/kgBB. Namun, terdapat batas atas atau dosis maksimal absolut yang tidak boleh dilampaui demi mencegah perdarahan intrakranial, yaitu 90 mg (di mana 10% diberikan sebagai bolus awal dalam 1 menit, dan sisanya 90% diberikan melalui infus kontinu selama 1 jam).  Sumber: Materi Modul Neuro 1 hal. 28, 38; mirip dengan Minites 1 pertanyaan 1",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-001.png"
+      "images/packages/blok-2h__ub-2h/img-001.png"
     ],
     "isBroken": false
   },
@@ -45,8 +45,8 @@ export const questions = [
     "answer": "C",
     "explanation": "BPPV paling sering disebabkan oleh canalithiasis (lepasnya otolit/kristal kalsium karbonat) yang masuk dan terperangkap ke dalam kanal semisirkularis posterior (sekitar 80-90% kasus). Hal ini terjadi karena secara anatomis, posisi kanal posterior adalah yang paling dependen (rendah) terhadap gravitasi saat seseorang berbaring. (Opsi D dan E adalah diagnosis banding vertigo, bukan tipe kanal). Sumber: Materi Modul Neuro 1 hal. 461, 469; mirip dengan Minites 1 pertanyaan 5  ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-002.png",
-      "images/packages/blok-2h__ub-2h-v1/img-003.png"
+      "images/packages/blok-2h__ub-2h/img-002.png",
+      "images/packages/blok-2h__ub-2h/img-003.png"
     ],
     "isBroken": false
   },
@@ -65,7 +65,7 @@ export const questions = [
     "answer": "D",
     "explanation": "Asterixis atau flapping tremor adalah tanda klinis klasik yang menunjukkan hilangnya tonus motorik secara intermiten (mioklonus negatif). Tanda ini didapatkan dengan meminta pasien mengekstensikan pergelangan tangan, dan tangan akan tampak mengepak. Asterixis khas dijumpai pada ensefalopati metabolik toksik, terutama ensefalopati hepatikum (akibat penumpukan amonia) dan ensefalopati uremikum.  Sumber: Materi Modul Neuro 1 hal. 92, 100",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-004.png"
+      "images/packages/blok-2h__ub-2h/img-004.png"
     ],
     "isBroken": false
   },
@@ -84,8 +84,8 @@ export const questions = [
     "answer": "B",
     "explanation": "Pewarnaan Tinta India (India ink stain) secara spesifik digunakan untuk mengidentifikasi keberadaan kapsul polisakarida yang tebal pada jamur Cryptococcus neoformans di dalam cairan serebrospinal (LCS). Kapsul tersebut tidak menyerap tinta sehingga akan tampak sebagai halo terang/bening dengan latar belakang gelap. Kondisi meningitis kriptokokal ini sangat khas pada pasien imunokompromais (seperti ODHA).  Sumber: Materi Modul Neuro 1 hal. 607, 608",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-005.png",
-      "images/packages/blok-2h__ub-2h-v1/img-006.png"
+      "images/packages/blok-2h__ub-2h/img-005.png",
+      "images/packages/blok-2h__ub-2h/img-006.png"
     ],
     "isBroken": false
   },
@@ -104,7 +104,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Prinsip utama tumbuh kembang dan kesehatan jiwa anak menekankan pentingnya figur lekat (attachment figure) yang stabil secara emosional di dalam lingkungan keluarga. Memisahkan anak secara drastis (opsi A dan C) dapat menimbulkan trauma baru. Memberikan figur pengganti di dalam rumah (misalnya nenek, bibi, atau pengasuh yang sehat) merupakan intervensi awal yang paling bijak untuk melindungi anak sekaligus mempertahankan ikatan keluarga.  Sumber: rekapan lama",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-007.png"
+      "images/packages/blok-2h__ub-2h/img-007.png"
     ],
     "isBroken": false
   },
@@ -123,7 +123,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Sistem Hoehn & Yahr mengklasifikasikan keparahan Parkinson. Stadium 1: gejala unilateral. Stadium 2: gejala bilateral tanpa gangguan keseimbangan. Stadium 3: gejala bilateral/menyeluruh disertai dengan gangguan refleks postural/keseimbangan ringan-sedang, namun pasien masih mandiri secara fisik. Stadium 4: disabilitas berat. Stadium 5: bedridden atau harus menggunakan kursi roda.  Sumber: Materi Modul Jiwa hal. 401",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-008.png"
+      "images/packages/blok-2h__ub-2h/img-008.png"
     ],
     "isBroken": false
   },
@@ -142,7 +142,7 @@ export const questions = [
     "answer": "E",
     "explanation": "Diagnosis Autism Spectrum Disorder (ASD) didasarkan pada dua pilar utama: gangguan komunikasi/interaksi sosial dan adanya minat/perilaku yang terbatas serta berulang (repetitive behaviors). Bermain secara tidak fungsional/simbolik, seperti mengabaikan fungsi utama mainan dan hanya terfokus memutar-mutar bagian tertentu (roda mobil) berulang kali, merupakan manifestasi khas dari perilaku repetitif tersebut.  Sumber: Materi Modul Jiwa hal. 378, 380, 381; mirip dengan Minites 2 pertanyaan 15",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-009.png"
+      "images/packages/blok-2h__ub-2h/img-009.png"
     ],
     "isBroken": false
   },
@@ -161,7 +161,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Medulloblastoma adalah tumor ganas (maligna/ high grade) susunan saraf pusat primer yang paling umum pada populasi anak-anak, dan lokasinya khas berada di fosa posterior (serebelum/otak kecil). Jika pertanyaannya hanya menanyakan \"tumor SSP anak tersering\" tanpa kata ganas, maka jawabannya adalah Astrositoma pilositik (namun ini bersifat jinak/low grade).  Sumber: Materi Modul Neuro 1 hal. 764, 791",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-010.png"
+      "images/packages/blok-2h__ub-2h/img-010.png"
     ],
     "isBroken": false
   },
@@ -180,7 +180,7 @@ export const questions = [
     "answer": "D",
     "explanation": "Oligodendroglioma adalah tumor sel glial yang paling sering bermanifestasi di lobus frontal hemisfer serebri pada orang dewasa pertengahan. Karakteristik mikroskopisnya sering menunjukkan sel fried-egg dan jaringan kapiler chicken-wire. Walaupun kalsifikasi terjadi pada mayoritas kasus (hingga 90%), kalsifikasi tidak selalu ada, sehingga opsi D adalah pernyataan yang paling mutlak benar secara klinis.  Sumber: Materi Modul Neuro 1 hal. 781",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-011.png"
+      "images/packages/blok-2h__ub-2h/img-011.png"
     ],
     "isBroken": false
   },
@@ -199,7 +199,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Pedoman standar merekomendasikan tindakan trombektomi mekanik endovaskular (EVT) untuk stroke iskemik akut akibat oklusi pembuluh darah besar (Large Vessel Occlusion/LVO) sirkulasi anterior jika dapat dilakukan dalam rentang waktu kurang dari 6 jam sejak onset gejala. (Catatan: Window time dapat diperpanjang hingga 24 jam dengan syarat ketat pencitraan tingkat lanjut seperti perfusi CT/MRI, namun <6 jam adalah acuan konvensionalnya).  Sumber: Materi Modul Neuro 1 hal. 37, 39",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-012.png"
+      "images/packages/blok-2h__ub-2h/img-012.png"
     ],
     "isBroken": false
   },
@@ -218,8 +218,8 @@ export const questions = [
     "answer": "B",
     "explanation": "Metamfetamin adalah agen stimulan sistem saraf pusat yang kuat. Mekanisme kerja utamanya adalah memicu vesikel intraseluler untuk melepaskan neurotransmiter monoamin katekolamin (terutama dopamin, noradrenalin/norepinefrin, dan sedikit serotonin) secara berlebihan ke celah sinaps, serta menghambat proses reuptake-nya kembali, sehingga memicu efek euforia dan hiperaktivitas simpatis. Sumber: Materi Modul Jiwa hal. 588, 591",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-013.png",
-      "images/packages/blok-2h__ub-2h-v1/img-014.png"
+      "images/packages/blok-2h__ub-2h/img-013.png",
+      "images/packages/blok-2h__ub-2h/img-014.png"
     ],
     "isBroken": false
   },
@@ -238,7 +238,7 @@ export const questions = [
     "answer": "D",
     "explanation": "Suvorexant dan Lemborexant adalah golongan Dual Orexin Receptor Antagonists (DORAs). Berbeda dengan obat tidur konvensional (seperti benzodiazepin dan Z-drugs misal zolpidem) yang bekerja memicu kantuk dengan menekan sistem saraf (GABA agonist), antagonis orexin bekerja dengan cara memblokir orexin, yaitu neuropeptida di hipotalamus yang berfungsi menjaga otak tetap terjaga/bangun (wake-promoting signal).  Sumber: Materi Modul Neuro 1 hal. 513, 514",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-015.png"
+      "images/packages/blok-2h__ub-2h/img-015.png"
     ],
     "isBroken": false
   },
@@ -257,8 +257,8 @@ export const questions = [
     "answer": "D",
     "explanation": "Antikonvulsan pada dasarnya bekerja dengan dua cara utama: meningkatkan inhibisi (GABA) atau menurunkan eksitasi (Natrium/Kalsium). Fenobarbital, benzodiazepin, vigabatrin, dan gabapentin semuanya bekerja menguatkan jalur inhibisi GABAergik. Sebaliknya, Fenitoin bekerja menstabilkan membran sel saraf dengan mengeblok kanal natrium (Na+ channel blocker), sehingga menurunkan hantaran impuls eksitasi tanpa melibatkan GABA. Sumber: Materi Modul Neuro 1 hal. 152, 691  ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-016.png",
-      "images/packages/blok-2h__ub-2h-v1/img-017.png"
+      "images/packages/blok-2h__ub-2h/img-016.png",
+      "images/packages/blok-2h__ub-2h/img-017.png"
     ],
     "isBroken": false
   },
@@ -277,8 +277,8 @@ export const questions = [
     "answer": "D",
     "explanation": "Obat-obatan seperti fenitoin, karbamazepin, lamotrigin, dan topiramate bekerja mencegah penyebaran kejang dengan cara menekan/menurunkan eksitasi seluler (umumnya melalui blokade kanal Natrium atau antagonis glutamat). Sedangkan Benzodiazepin (seperti diazepam) bekerja dengan berikatan pada reseptor GABA-A untuk meningkatkan efek inhibisi (penghambatan) pada susunan saraf pusat, bukan menurunkan eksitasi secara langsung. Sumber: Materi Modul Neuro 1 hal. 153, 411  ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-018.png",
-      "images/packages/blok-2h__ub-2h-v1/img-019.png"
+      "images/packages/blok-2h__ub-2h/img-018.png",
+      "images/packages/blok-2h__ub-2h/img-019.png"
     ],
     "isBroken": false
   },
@@ -297,7 +297,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Meningioma adalah tumor jinak ekstrakranial yang berkembang dari sel-sel arakhnoid (arachnoid cap cells) pada meninges (selaput pelindung otak). Tumor ini tumbuh lambat dan sangat khas terlihat menempel serta berasal dari dasar duramater (dural tail sign). Ini merupakan tumor primer intrakranial paling umum pada orang dewasa. Sumber: Materi Modul Neuro 1 hal. 797 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-020.png"
+      "images/packages/blok-2h__ub-2h/img-020.png"
     ],
     "isBroken": false
   },
@@ -316,9 +316,9 @@ export const questions = [
     "answer": "B",
     "explanation": "Penyakit tetanus disebabkan oleh neurotoksin tetanospasmin yang menyekat jalur inhibisi saraf motorik. Untuk mencegah perburukan spasme/kaku otot, toksin bebas yang masih beredar di darah dan belum terikat pada ujung saraf harus segera dinetralisir dengan imunisasi pasif, yaitu Human Tetanus Immunoglobulin (HTIG) atau ATS. (Catatan: Benzodiazepin seperti diazepam digunakan untuk merelaksasi otot, namun bukan \"obat tunggal\" untuk netralisasi penyebab kekakuan). Sumber: Materi Modul Neuro 1 hal. 738   ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-021.png",
-      "images/packages/blok-2h__ub-2h-v1/img-022.png",
-      "images/packages/blok-2h__ub-2h-v1/img-023.png"
+      "images/packages/blok-2h__ub-2h/img-021.png",
+      "images/packages/blok-2h__ub-2h/img-022.png",
+      "images/packages/blok-2h__ub-2h/img-023.png"
     ],
     "isBroken": false
   },
@@ -337,8 +337,8 @@ export const questions = [
     "answer": "C",
     "explanation": "(Penjelasan AI dulu) Secara umum, Karbamazepin (dan juga lamotrigin atau levetiracetam) merupakan obat lini pertama (first-line) untuk menangani kejang fokal. Sebagai perbandingan, asam valproat adalah lini pertama untuk kejang umum (generalized), sedangkan etosuksimid sangat spesifik untuk kejang absans (absence seizure). Penjelasan tambahan: di transkrip kuliah dr lotar, epilepsi dibagi jadi focal dan general, semua yang muncul di sebagian atau parsial itu masuk focal. jadi obat lini pertama nya yang di Level A semua, yang bangkitan parsial semua, CBZ, LEV, PHT, ZNS, OXC, GBP, LTG, Jadi bener C. Selain Karbamazepin, opsi lain jawaban nya kejang general/umum.   Sumber: rekapan lama",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-024.png",
-      "images/packages/blok-2h__ub-2h-v1/img-025.png"
+      "images/packages/blok-2h__ub-2h/img-024.png",
+      "images/packages/blok-2h__ub-2h/img-025.png"
     ],
     "isBroken": false
   },
@@ -357,7 +357,7 @@ export const questions = [
     "answer": "A",
     "explanation": "Pada pemeriksaan neurologis, nistagmus (gerakan mata involunter) dapat membantu membedakan vertigo sentral dan perifer. Nistagmus yang arah cepatnya berubah-ubah mengikuti arah lirikan mata (bidireksional), atau nistagmus murni vertikal, adalah tanda bahaya (red flag) yang sangat spesifik mengindikasikan lesi patologis pada susunan saraf pusat (Sentral), seperti infark batang otak atau serebelum.  Sumber: Materi Modul Neuro 1 hal. 453, 458",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-026.png"
+      "images/packages/blok-2h__ub-2h/img-026.png"
     ],
     "isBroken": false
   },
@@ -376,7 +376,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Sindrom von Hippel-Lindau (VHL) adalah kelainan genetik langka yang diturunkan secara autosomal dominan. Penyakit ini disebabkan oleh mutasi kecacatan pada gen supresor tumor VHL (terletak pada kromosom 3). Pasien dengan sindrom ini berisiko tinggi mengembangkan berbagai jenis tumor jinak dan ganas, seperti hemangioblastoma di SSP/retina dan karsinoma sel ginjal. Sumber: Materi Modul Neuro 1 hal. 762 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-027.png"
+      "images/packages/blok-2h__ub-2h/img-027.png"
     ],
     "isBroken": false
   },
@@ -395,7 +395,7 @@ export const questions = [
     "answer": "A",
     "explanation": "Pertolongan pertama psikologis (Psychological First Aid) untuk ide bunuh diri adalah memberikan validasi empati dan membingkai ulang (reframing) pemikiran kognitif pasien secara suportif tanpa bersikap meremehkan (invalidasi). Opsi A berfokus pada reframing makna keberhasilan, sementara B dan D membandingkan nasib yang seringkali justru membuat pasien merasa perasaannya diremehkan atau tidak didengar. Notes - Di transkrip dan ppt emang gak jelas, pilih yang bermoral aja. Sumber: Materi Modul Jiwa hal. 362 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-028.png"
+      "images/packages/blok-2h__ub-2h/img-028.png"
     ],
     "isBroken": false
   },
@@ -414,9 +414,9 @@ export const questions = [
     "answer": "A",
     "explanation": "PENJELASAN AI - Spora C. tetani memproduksi toksin tetanospasmin di lokasi luka. Toksin ini masuk ke neuromuscular junction, kemudian bergerak naik melawan arah impuls normal menuju ke sumsum tulang belakang (medula spinalis). Proses \"naik\"-nya toksin melalui badan akson saraf tepi menuju ke sentral ini disebut dengan transpor Retrograd Intraaksonal. Sumber: Materi Modul Neuro 1 hal. 718, 719   ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-029.png",
-      "images/packages/blok-2h__ub-2h-v1/img-030.png",
-      "images/packages/blok-2h__ub-2h-v1/img-031.png"
+      "images/packages/blok-2h__ub-2h/img-029.png",
+      "images/packages/blok-2h__ub-2h/img-030.png",
+      "images/packages/blok-2h__ub-2h/img-031.png"
     ],
     "isBroken": false
   },
@@ -435,7 +435,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Gangguan gerak (gangguan ganglia basalis) dibagi dua: hipokinetik dan hiperkinetik. Parkinson adalah contoh hipokinetik (gerak lambat/sedikit) yang khas disertai peningkatan tonus (rigiditas hipertonik). Sebaliknya, chorea atau atetosis adalah contoh hiperkinetik (gerakan berlebih/tak terkendali) yang mana tonus otot dasarnya justru normal atau malah melemah/menurun (hipotonik). PENJELASAN TAMBAHAN - Kalau ”Tonus meningkat” berarti ada tahanan atau kekakuan saat bergerak. Berdasarkan logika, kalau hiperkinetik seharus nya tonus nya normal. Sumber: Materi Modul Neuro 1 hal. 212, 245",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-032.png"
+      "images/packages/blok-2h__ub-2h/img-032.png"
     ],
     "isBroken": false
   },
@@ -454,7 +454,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Myelitis (misalnya mielitis transversa) adalah peradangan yang terjadi pada medula spinalis (sumsum tulang belakang). Gejalanya meliputi defisit motorik/sensorik (paraparesis, level sensorik batas tegas) dan otonom (retensi urin/alvi) di bawah level lesi spinal. Nervus fasialis (N.VII) adalah saraf kranial yang berpusat di batang otak (otak), sehingga tidak akan terkena dampak oleh lesi di medula spinalis. di gambar → TM itu Transversal Myelitis, GBS Gullian Barre.  Sumber: Materi Modul Neuro 1 hal. 527",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-033.png"
+      "images/packages/blok-2h__ub-2h/img-033.png"
     ],
     "isBroken": false
   },
@@ -473,7 +473,7 @@ export const questions = [
     "answer": "B",
     "explanation": "PENJELASAN AI - Terdapat penyesalan mendalam dan mood tertekan pasca melahirkan. Jika gejala ini menetap lebih dari dua minggu dan mengganggu fungsi peran sebagai ibu, ini dikategorikan sebagai Depresi Postpartum (Postpartum Depression). Kondisi ini lebih berat dibanding baby blues (yang ringan dan swasirna dalam hitungan hari) namun belum mencapai tahap waham/halusinasi seperti pada psikosis postpartum. (Dalam konteks soal UKMPPD umum, jawaban diarahkan ke spektrum depresi). PENJELASAN TAMBAHAN - Baby blues ada fluktuasi mood yang positif dan negatif gak full rasa tertekan. Karena kurang nya “fluktuasi mood” di kasus kita pilih Post Partum Depression. Kalau psychosis sudah pasti ada waham, pilah pilah aja mana kalau kasus nya di UB beda.  Sumber: Materi Modul Jiwa hal. 389, 476; mirip dengan Minites 2 pertanyaan 20",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-034.png"
+      "images/packages/blok-2h__ub-2h/img-034.png"
     ],
     "isBroken": false
   },
@@ -492,7 +492,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Refleks bulbokavernosus merupakan refleks polisinaptik yang lengkung refleks aferen dan eferennya dilayani oleh nervus pudendus dengan pusat integrasi di segmen medula spinalis sakral S2-S4. Refleks ini diuji dengan cara memencet glans penis (atau menarik kateter folley) yang akan menghasilkan kontraksi sfingter ani anal eksternal. Sering digunakan pada evaluasi fase syok spinal pasca trauma. Pudendus harus nya sudah paham lah ya, no debat ini  mah.  Sumber: Materi Modul Neuro 1 hal. 704",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-035.png"
+      "images/packages/blok-2h__ub-2h/img-035.png"
     ],
     "isBroken": false
   },
@@ -511,7 +511,7 @@ export const questions = [
     "answer": "B",
     "explanation": "PENJELASAN AI - CT scan kepala tanpa kontras (non-contrast head CT) adalah baku emas lini pertama (gold standard) di ruang gawat darurat untuk semua kasus kecurigaan stroke. Alasannya, CT scan tanpa kontras sangat cepat dikerjakan, tersedia luas, dan secara instan mampu membedakan darah akut (tampak putih/hiperdens) dari jaringan iskemik, yang penting untuk memutuskan pemberian terapi trombolitik. PENJELASAN TAMBAHAN - Di ppt cuman ada “Pelajari lagi” khusus slide judul hemoragik stroke. Di transkrip dr nya ngejelasin mau nggak mau pasti CT scan alur nya buat nentuin ini iskemik atau hemoragik. Kalau di posyandu pun pasti langsung dirujuk ke RM yang stroke-ready/ada CT scan. Tetep pilih tanpa kontras/non kontras kalau pertanyaan nya ada opsi CT scan dengan kontras, karena konsep nya kalau stroke hemoragik kan pasti ada darah, kontras itu cuman buat massa/tumor yang gak bakal keliatan kalau di CT.  Sumber: Materi Modul Neuro 1 hal. 64, 65; mirip dengan Minites 1 pertanyaan 29",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-036.png"
+      "images/packages/blok-2h__ub-2h/img-036.png"
     ],
     "isBroken": false
   },
@@ -530,8 +530,8 @@ export const questions = [
     "answer": "D",
     "explanation": "Manitol adalah diuretik osmotik hipertonik yang digunakan untuk menarik cairan dari parenkim otak yang edema ke dalam pembuluh darah, sehingga menurunkan tekanan intrakranial (TIK). Dosis standar yang direkomendasikan adalah pemberian secara bolus intravena antara 0,25 hingga 1 g/kgBB setiap 6-8 jam. Sumber: Materi Modul Neuro 1 hal. 690, 691  ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-037.png",
-      "images/packages/blok-2h__ub-2h-v1/img-038.png"
+      "images/packages/blok-2h__ub-2h/img-037.png",
+      "images/packages/blok-2h__ub-2h/img-038.png"
     ],
     "isBroken": false
   },
@@ -567,7 +567,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Jet lag terjadi akibat desinkronisasi temporer antara jam biologis sirkadian internal tubuh dengan siklus terang-gelap lokal (waktu setempat) akibat perjalanan melintasi beberapa zona waktu. Oleh karena itu, dalam klasifikasi ICSD, ini dimasukkan ke dalam kelompok Gangguan irama sirkadian tidur-bangun (bersama dengan shift work sleep disorder). Sumber: Materi Modul Neuro 1 hal. 515; mirip dengan Minites 2 pertanyaan 2",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-039.png"
+      "images/packages/blok-2h__ub-2h/img-039.png"
     ],
     "isBroken": false
   },
@@ -586,7 +586,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Berdasarkan pedoman diagnostik medis terkini (seperti ICSD-3), insomnia dibedakan berdasarkan durasinya. Short-term insomnia (insomnia akut/jangka pendek) adalah gangguan tidur yang berlangsung kurang dari 3 bulan. Jika keluhan tersebut bertahan menetap lebih dari 3 bulan (dengan frekuensi ≥3 kali per minggu), barulah ia diklasifikasikan sebagai insomnia kronik. Sumber: Materi Modul Neuro 1 hal. 500, 504",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-040.png"
+      "images/packages/blok-2h__ub-2h/img-040.png"
     ],
     "isBroken": false
   },
@@ -605,7 +605,7 @@ export const questions = [
     "answer": "A",
     "explanation": "Spastisitas adalah tanda lesi Upper Motor Neuron (UMN)/traktus piramidal, dicirikan oleh tonus yang melawan hanya pada awal regangan pasif yang cepat, lalu tiba-tiba melepas (seperti pisau lipat / clasp-knife). Rigiditas adalah tanda lesi ganglia basalis (ekstrapiramidal), dicirikan oleh tahanan yang konstan, menetap dan kaku di sepanjang gerakan sendi terlepas dari kecepatan geraknya (seperti pipa timah / lead-pipe atau cogwheel). Sumber: Materi Modul Neuro 1 hal. 213, 224 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-041.png"
+      "images/packages/blok-2h__ub-2h/img-041.png"
     ],
     "isBroken": false
   },
@@ -624,7 +624,7 @@ export const questions = [
     "answer": "B",
     "explanation": "BPPV (vertigo posisional paroksismal jinak) memiliki prognosis yang sangat baik (benign) dan seringkali dapat disembuhkan seketika dengan manuver reposisi otolit (seperti manuver Epley atau Semont). Namun, BPPV memiliki kelemahan di mana angka kekambuhannya (rekurensi) cukup tinggi pada tahun-tahun berikutnya (mencapai sekitar 15-30% per tahun). Sumber: Materi Modul Neuro 1 hal. 477; mirip dengan Minites 1 pertanyaan 5",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-042.png"
+      "images/packages/blok-2h__ub-2h/img-042.png"
     ],
     "isBroken": false
   },
@@ -643,7 +643,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Spondilitis TB menginfeksi diskus intervertebralis bagian anterior dan menyebar ke korpus tulang (vertebra). Kehancuran (destruksi) pada bagian anterior tulang belakang ini menyebabkan ruas tersebut kolaps ke depan, membentuk sudut tajam melengkung di punggung yang disebut deformitas Gibbus. (Bamboo spine khas untuk Ankylosing Spondylitis, Sunburst/Onion skin untuk tumor tulang). Sumber: Materi Modul Neuro 1 hal. 191, 192; mirip dengan Minites 1 pertanyaan 28",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-043.png"
+      "images/packages/blok-2h__ub-2h/img-043.png"
     ],
     "isBroken": false
   },
@@ -662,7 +662,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Low Back Pain (LBP) non-spesifik akut adalah keluhan nyeri pinggang mekanis berupa regangan otot/ligamen (sprain/strain) tanpa kelainan neurologis radikuler. Hingga 90% kasus bersifat swasirna (self-limiting) dan akan membaik secara alamiah dalam 4-6 minggu. Pencitraan (MRI/X-ray) tidak dianjurkan kecuali terdapat red flags (seperti kelemahan motorik progresif, demam, riwayat kanker, trauma berat). Sumber: Materi Modul Neuro 1 hal. 185, 668",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-044.png"
+      "images/packages/blok-2h__ub-2h/img-044.png"
     ],
     "isBroken": false
   },
@@ -681,7 +681,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Benign Paroxysmal Positional Vertigo (BPPV) secara epidemiologis merupakan penyebab paling dominan pada kelompok vertigo vestibular perifer, menyumbang lebih dari separuh keseluruhan kasus keluhan pusing berputar di praktik layanan primer dan spesialis saraf/THT. Sumber: Materi Modul Neuro 1 hal. 447, 469; mirip dengan Minites 1 pertanyaan 5",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-045.png"
+      "images/packages/blok-2h__ub-2h/img-045.png"
     ],
     "isBroken": false
   },
@@ -700,7 +700,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Persarafan diafragma (otot pernapasan utama) dilayani oleh Nervus Frenikus yang berasal dari segmen servikal C3, C4, dan C5. Jika trauma terjadi pada servikal tinggi (di atas C3) yang mengakibatkan transeksi medula komplit, diafragma akan lumpuh total sehingga fungsi pernapasan spontan terhenti (Apnea) dan pasien membutuhkan ventilator segera. Sumber: Materi Modul Neuro 1 hal. 350",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-046.png"
+      "images/packages/blok-2h__ub-2h/img-046.png"
     ],
     "isBroken": false
   },
@@ -736,7 +736,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Reaksi ekstrapiramidal distonia akut (spasme otot wajah/leher) terjadi akibat ketidakseimbangan efek dopamin-asetilkolin akibat blokade kuat reseptor dopamin oleh obat neuroleptik tipikal (Haloperidol). Kondisi darurat ini paling efektif diatasi dengan obat golongan Antikolinergik intramuskular/intravena, seperti Benztropine, Triheksifenidil (THP), Difenhidramin, atau Sulfas Atropin. Sumber: Materi Modul Jiwa hal. 523, 528; mirip dengan Minites 2 pertanyaan 10",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-047.png"
+      "images/packages/blok-2h__ub-2h/img-047.png"
     ],
     "isBroken": false
   },
@@ -755,7 +755,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Sesuai protokol Status Epileptikus, obat lini pertama (tahap awal 0-10 menit) adalah golongan Benzodiazepin (diazepam/lorazepam IV). Jika pada dosis pertama kejang belum mereda setelah 5 menit, pemberian Benzodiazepin dapat diulang satu kali lagi. Jika kejang masih refrakter, barulah beralih ke obat lini kedua (fase stabilisasi 10-30 menit) seperti infus Fenitoin/Fosfenitoin. Sumber: Materi Modul Neuro 1 hal. 145, 152",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-048.png"
+      "images/packages/blok-2h__ub-2h/img-048.png"
     ],
     "isBroken": false
   },
@@ -774,8 +774,8 @@ export const questions = [
     "answer": "B",
     "explanation": "Clostridium tetani adalah bakteri gram positif basil pembentuk spora yang bersifat anaerob obligat. Artinya, bakteri ini tidak bisa bertahan dan tidak akan berproliferasi bila terpapar oksigen murni (lingkungan aerob). Spora bakteri akan berubah bentuk menjadi vegetatif dan memproduksi racun ketika berada di lingkungan jaringan dalam luka yang mati (nekrotik) dan kedap udara (miskin oksigen).  Sumber: Materi Modul Neuro 1 hal. 718, 721",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-049.png",
-      "images/packages/blok-2h__ub-2h-v1/img-050.png"
+      "images/packages/blok-2h__ub-2h/img-049.png",
+      "images/packages/blok-2h__ub-2h/img-050.png"
     ],
     "isBroken": false
   },
@@ -794,7 +794,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Attention Deficit Hyperactivity Disorder (ADHD) memiliki tiga komponen gejala utama: inatensi (kurang perhatian), hiperaktivitas, dan impulsivitas. Kriteria DSM-5 untuk gejala inatensi meliputi kesulitan mempertahankan fokus, mudah teralih perhatiannya oleh stimulus luar, tampak tidak mendengarkan saat diajak bicara, serta sering gagal mengikuti instruksi dan tidak menyelesaikan tugas sekolah/pekerjaan (prokrastinasi/ task incompletion).  Sumber: Materi Modul Jiwa hal. 373, 374; mirip dengan Minites 2 pertanyaan 26",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-051.png"
+      "images/packages/blok-2h__ub-2h/img-051.png"
     ],
     "isBroken": false
   },
@@ -813,7 +813,7 @@ export const questions = [
     "answer": "D",
     "explanation": "Dalam patofisiologi stroke oklusi, zona infark dibagi dua. Inti iskemik (ischemic core) adalah area sentral yang sel-selnya telah mati secara ireversibel akibat nekrosis cepat (oksigen habis). Penumbra iskemik adalah jaringan otak luas yang mengelilingi core tersebut; area ini mengalami iskemia fungsional tetapi morfologi selnya masih hidup (kematian sel tertunda via apoptosis). Target utama terapi trombolisis adalah menyelamatkan penumbra ini.  Sumber: Materi Modul Neuro 1 hal. 18, 42",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-052.png"
+      "images/packages/blok-2h__ub-2h/img-052.png"
     ],
     "isBroken": false
   },
@@ -832,7 +832,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Secara patofisiologis, penyakit Parkinson timbul akibat degenerasi sel-sel neuron dopaminergik secara progresif pada area substantia nigra pars compacta di ganglia basalis. Hilangnya sel-sel ini mengakibatkan penurunan drastis produksi dopamin di jalur nigrostriatal, yang kemudian menyebabkan ketidakseimbangan (asetilkolin menjadi dominan secara relatif) sehingga muncul gejala bradikinesia, tremor istirahat, dan rigiditas.  Sumber: Materi Modul Jiwa hal. 398; mirip dengan Minites 1 pertanyaan 21",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-053.png"
+      "images/packages/blok-2h__ub-2h/img-053.png"
     ],
     "isBroken": false
   },
@@ -851,7 +851,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Pada kasus Hernia Nukleus Pulposus (HNP) lumbal, radiks yang terkompresi akan menunjukkan defisit neurologis yang khas. Radiks L4 bertanggung jawab atas refleks patella (KPR). Radiks L5 bertanggung jawab atas dorsofleksi ibu jari kaki. Sedangkan radiks S1 bertanggung jawab atas fungsi plantar flexi kaki dan refleks Achilles (APR). Menurunnya refleks achilles secara spesifik menunjuk pada lesi/iritasi radiks S1.  Sumber: Materi Modul Neuro 1 hal. 198, 363",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-054.png"
+      "images/packages/blok-2h__ub-2h/img-054.png"
     ],
     "isBroken": false
   },
@@ -870,7 +870,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Nyeri neuropatik adalah nyeri yang timbul sebagai akibat langsung dari lesi atau penyakit pada sistem somatosensorik (saraf itu sendiri yang rusak), bukan karena adanya kerusakan jaringan (inflamasi/luka luar). Nyeri berkarakter rasa terbakar (burning), kesemutan/tersetrum, atau tertusuk jarum pasca infeksi virus Varicella zoster (Neuralgia Pasca-Herpetik) adalah contoh klasik dari nyeri neuropatik perifer.  Sumber: Materi Modul Neuro 1 hal. 661, 662; mirip dengan Minites 1 pertanyaan 7",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-055.png"
+      "images/packages/blok-2h__ub-2h/img-055.png"
     ],
     "isBroken": false
   },
@@ -889,7 +889,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Afasia adalah suatu sindrom klinis berupa hilangnya kemampuan menggunakan bahasa—baik dalam fungsi pemahaman (reseptif) maupun produksi (ekspresif) lisan maupun tulisan—akibat adanya lesi pada pusat bahasa di korteks serebri (biasanya hemisfer dominan kiri). Opsi A mendeskripsikan Disartria, sedangkan opsi C mendeskripsikan Disfonia.  Sumber: Materi Modul Neuro 1 hal. 309",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-056.png"
+      "images/packages/blok-2h__ub-2h/img-056.png"
     ],
     "isBroken": false
   },
@@ -925,8 +925,8 @@ export const questions = [
     "answer": "C",
     "explanation": "Cluster headache (nyeri kepala klaster) memiliki ciri klinis yang sangat patognomonik: serangan nyeri unilateral yang luar biasa hebat, berpusat di daerah orbita/supraorbita/temporal, berlangsung 15-180 menit, dan mutlak disertai keluhan disfungsi otonom parasimpatis pada sisi yang sama (ipsilateral), seperti mata merah/berair (lakrimasi), hidung tersumbat/meler (rinorea), hiperhidrosis dahi, wajah bengkak, atau ptosis. Sumber: Materi Modul Neuro 1 hal. 615, 618, 620; mirip dengan Minites 1 pertanyaan 22",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-057.png",
-      "images/packages/blok-2h__ub-2h-v1/img-058.png"
+      "images/packages/blok-2h__ub-2h/img-057.png",
+      "images/packages/blok-2h__ub-2h/img-058.png"
     ],
     "isBroken": false
   },
@@ -962,7 +962,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Proses tidur diatur oleh mekanisme \"sakelar\" di otak. Pusat sakelar yang menginisiasi dan mempertahankan tidur lelap (sleep switch) terletak pada nukleus VLPO di hipotalamus anterior. Saat aktif, VLPO melepaskan GABA dan galanin yang menghambat sistem pemicu-bangun (Lokus seruleus, Nukleus rafe, dan hipotalamus lateral pembentuk orexin). Nukleus suprakiasmatik (A) adalah pengatur irama sirkadian jam biologis. Sumber: Materi Modul Neuro 1 hal. 498",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-059.png"
+      "images/packages/blok-2h__ub-2h/img-059.png"
     ],
     "isBroken": false
   },
@@ -981,7 +981,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Dalam psikiatri klinis, Tilikan (Insight) dinilai pada skala 1-6. Tilikan 1: penyangkalan total. Tilikan 2: ambivalen/sadar sakit lalu menyangkal kembali. Tilikan 3: Pasien sadar dirinya sedang mengalami kondisi aneh/sakit, namun ia menyalahkan faktor eksternal (seperti hal mistis, guna-guna, atau orang lain) sebagai penyebab utama gejalanya (mekanisme proyeksi), yang sangat cocok dengan skenario pasien di soal. Sumber: Materi Modul Jiwa hal. 298, 303",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-060.png"
+      "images/packages/blok-2h__ub-2h/img-060.png"
     ],
     "isBroken": false
   },
@@ -1000,7 +1000,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Pemeriksaan motorik dalam instrumen ASIA mengharuskan pemeriksa mengevaluasi kekuatan otot pada 10 kelompok otot kunci (miotom) secara bilateral (kanan dan kiri). Kelompok tersebut meliputi 5 pasang pada ekstremitas atas (mewakili saraf C5 hingga T1) dan 5 pasang pada ekstremitas bawah (mewakili saraf L2 hingga S1). Sumber: Materi Modul Neuro 1 hal. 704",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-061.png"
+      "images/packages/blok-2h__ub-2h/img-061.png"
     ],
     "isBroken": false
   },
@@ -1019,7 +1019,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Dosis baku pemberian alteplase (rtPA) untuk stroke iskemik akut adalah 0,9 mg/kgBB. Untuk pasien dengan berat badan 50 kg, perhitungan eksaknya adalah 50 kg x 0,9 mg/kg \\= 45 mg. Dari opsi yang tersedia pada modul asli, rentang 45-60 mg adalah rentang yang memuat angka 45 mg, meskipun nilai tepatnya berada pada batas bawah. Sumber: Materi Modul Neuro 1 hal. 28, 38; mirip dengan Minites 1 pertanyaan 1",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-062.png"
+      "images/packages/blok-2h__ub-2h/img-062.png"
     ],
     "isBroken": false
   },
@@ -1055,8 +1055,8 @@ export const questions = [
     "answer": "C",
     "explanation": "Pasien memiliki komorbid DM, hipertensi, dan gangguan fungsi ginjal, yang menjadikannya sangat rentan terhadap efek samping nefrotoksik akibat vasokonstriksi arteriolar ginjal. Semua obat golongan NSAID (Ibuprofen, Ketorolac, Diklofenak, Aspirin/OAINS) dilarang/dihindari pada pasien gagal ginjal. Pilihan paling aman sebagai terapi lini pertama nyeri ringan-sedang adalah Parasetamol karena aman untuk ginjal dan saluran cerna. Sumber: Materi Modul Neuro 1 hal. 673",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-063.png",
-      "images/packages/blok-2h__ub-2h-v1/img-064.png"
+      "images/packages/blok-2h__ub-2h/img-063.png",
+      "images/packages/blok-2h__ub-2h/img-064.png"
     ],
     "isBroken": false
   },
@@ -1075,7 +1075,7 @@ export const questions = [
     "answer": "A",
     "explanation": "Epidemiologi meningitis bakterial bervariasi sesuai usia. Pada populasi dewasa dan lansia (di atas usia 50 tahun), patogen dominan penyebab meningitis adalah Streptococcus pneumoniae (meningitis pneumokokus), sering kali berawal dari pneumonia atau sinusitis. (Meski L. monocytogenes juga harus di-cover secara empiris pada lansia, ia bukan patogen \"paling sering\", sementara grup B Streptococcus dominan pada neonatus). Sumber: Materi Modul Neuro 1 hal. 531, 543, 546",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-065.png"
+      "images/packages/blok-2h__ub-2h/img-065.png"
     ],
     "isBroken": false
   },
@@ -1128,7 +1128,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Penyakit Myasthenia Gravis (MG) terjadi akibat autoantibodi yang merusak reseptor asetilkolin. Pyridostigmine adalah obat golongan Asetilkolinesterase inhibitor (antikolinesterase reversibel). Cara kerjanya bukan menciptakan lebih banyak asetilkolin, melainkan menghalangi enzim yang memecah/menghancurkan asetilkolin. Alhasil, molekul asetilkolin berada lebih lama di celah sinaps dan menumpuk, meningkatkan probabilitasnya untuk menstimulasi reseptor yang masih tersisa. Sumber: Materi Modul Neuro 1 hal. 323, 324; mirip dengan Minites 1 pertanyaan 23",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-066.png"
+      "images/packages/blok-2h__ub-2h/img-066.png"
     ],
     "isBroken": false
   },
@@ -1181,7 +1181,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Penyakit ganglia basalis menyebabkan gangguan gerak tubuh (movement disorder) yang dibagi menjadi dua spektrum berlawanan. Hiperkinetik berarti gerakan berlebih yang tidak diinginkan (seperti Chorea, Atetosis, Balismus, Tic, Distonia, Tremor). Sebaliknya, Hipokinetik berarti miskin gerakan atau gerakan menjadi lambat dan kecil-kecil (bradikinesia, hipomimia, mikrografia), yang mana ini adalah ciri khas dari sindrom Parkinson (Parkinsonisme). Sumber: Materi Modul Neuro 1 hal. 212, 213 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-067.png"
+      "images/packages/blok-2h__ub-2h/img-067.png"
     ],
     "isBroken": false
   },
@@ -1200,8 +1200,8 @@ export const questions = [
     "answer": "D",
     "explanation": "Evaluasi perkembangan (milestone) pada bayi menggunakan Denver II atau KPSP mencakup beberapa tahapan motorik halus. Di rentang usia 6 hingga 7 bulan, keterampilan motorik halus utama yang dikuasai adalah memindahkan kubus dari satu tangan ke tangan lain, bermain menggenggam mainan (seperti kerincingan), dan sering kali merapatkan kedua tangannya di garis tengah (midline) secara volunter. Sumber: Materi Modul Jiwa hal. 222  ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-068.png",
-      "images/packages/blok-2h__ub-2h-v1/img-069.png"
+      "images/packages/blok-2h__ub-2h/img-068.png",
+      "images/packages/blok-2h__ub-2h/img-069.png"
     ],
     "isBroken": false
   },
@@ -1220,7 +1220,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Manuver diagnostik untuk jebakan saraf medianus (Carpal Tunnel Syndrome) tersebut adalah Tes Phalen. Dengan menahan posisi fleksi maksimal pada kedua pergelangan tangan (punggung tangan dipertemukan, siku ke atas) selama 60 detik, saraf medianus akan tertekan kuat. Pasien yang positif akan merasakan sensasi kesemutan menjalar (parestesia) ke area ibu jari, telunjuk, hingga jari tengah. (Tinel: dilakukan dengan mengetuk area pergelangan; Finkelstein: untuk de Quervain tenosynovitis). Sumber: mirip dengan Minites 1 pertanyaan 3 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-070.jpeg"
+      "images/packages/blok-2h__ub-2h/img-070.jpeg"
     ],
     "isBroken": false
   },
@@ -1239,7 +1239,7 @@ export const questions = [
     "answer": "A",
     "explanation": "Tes Patrick, yang juga dikenal dengan akronim FABER (Flexion, Abduction, External Rotation), dirancang untuk membedakan nyeri patologis pada panggul (hip joint) atau sendi Sakroiliaka (SI joint). Pasien dibaringkan terlentang, satu kaki disilangkan seperti angka \"4\" di atas lutut kaki sebelahnya, kemudian pemeriksa menekan lutut yang tertekuk ke bawah. Nyeri di belakang (punggung/bokong) menunjukkan positif iritasi sakroiliaka. Sumber: Materi Modul Neuro 1 hal. 203 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-071.jpeg"
+      "images/packages/blok-2h__ub-2h/img-071.jpeg"
     ],
     "isBroken": false
   },
@@ -1258,7 +1258,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Trias klasik (demam periodik memuncak, menggigil kedinginan, lalu berkeringat deras) ditambah riwayat epidemiologis perjalanan ke area endemik tinggi (seperti Papua/Maluku di Indonesia bagian timur) mengindikasikan kecurigaan kuat penyakit Malaria. Gold standard (baku emas) pemeriksaan penunjangnya adalah visualisasi langsung parasit Plasmodium menggunakan mikroskopik dengan sediaan apusan darah tepi (hapusan darah tebal dan tipis). Sumber: Materi Modul Neuro 1 hal. 561, 562 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-072.png"
+      "images/packages/blok-2h__ub-2h/img-072.png"
     ],
     "isBroken": false
   },
@@ -1277,7 +1277,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Sebagai lini terapi meredakan gejala (symptomatic relief) yang cepat pada gangguan cemas atau serangan panik akut, obat golongan anti-anxietas (anxiolitik) seperti derivat Benzodiazepin (misalnya Alprazolam, Diazepam, Lorazepam) adalah pilihan utama. Sebagai perbandingan, haloperidol dan klorpromazin adalah antipsikotik (skizofrenia), litium untuk bipolar, dan karbamazepin untuk anti-epilepsi. Sumber: Materi Modul Jiwa hal. 540 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-073.png"
+      "images/packages/blok-2h__ub-2h/img-073.png"
     ],
     "isBroken": false
   },
@@ -1296,7 +1296,7 @@ export const questions = [
     "answer": "D",
     "explanation": "Rigiditas adalah kekakuan tonus otot akibat lesi struktural patologis pada ganglia basalis (ekstrapiramidal). Rigiditas yang nyata akan selalu dirasakan persisten saat dokter melakukan gerakan pasif fleksi maupun ekstensi (berbeda dengan spastisitas) pada kecepatan lambat/cepat. Karena ini merupakan lesi organik, kekakuan ini bersifat objektif dan tidak akan hilang hanya dengan mengalihkan perhatian pasien (distraksi mental). Sumber: Materi Modul Neuro 1 hal. 213, 224 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-074.png"
+      "images/packages/blok-2h__ub-2h/img-074.png"
     ],
     "isBroken": false
   },
@@ -1315,7 +1315,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Perdarahan epidural (EDH) umumnya disebabkan oleh robekan arteri meningea media pasca-trauma akibat benturan/fraktur pada tengkorak. Karena perdarahan menumpuk dengan cepat di atas selaput duramater, ia akan menekan jaringan otak ke arah dalam, namun darah itu tak dapat meluas melebihi titik pelekatan erat antara duramater dan tulang (garis sutura). Hasilnya, darah menggembung menyerupai lensa cembung dua sisi (bikonveks atau lenticular). Sumber: Materi Modul Neuro 1 hal. 695 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-075.png"
+      "images/packages/blok-2h__ub-2h/img-075.png"
     ],
     "isBroken": false
   },
@@ -1334,7 +1334,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Arsitektur tidur NREM dibagi menjadi tiga tahap. Tahap N1 ditandai gelombang theta. Ciri paling mutlak dan diagnostik dari stadium tidur fase 2 (N2)—yang menyusun sekitar 50% masa tidur total manusia—adalah gelombang khas pada rekaman EEG yang tiba-tiba meninggi/bergerigi rapat yang disebut sleep spindles, dan gelombang tegangan tinggi tajam yang terisolasi disebut K-complexes. Sumber: Materi Modul Neuro 1 hal. 494, 495 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-076.png"
+      "images/packages/blok-2h__ub-2h/img-076.png"
     ],
     "isBroken": false
   },
@@ -1370,7 +1370,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Berdasarkan sumber anatomisnya, nyeri fisiologis dibagi menjadi nosiseptif dan neuropatik. Nyeri Nosiseptif terjadi akibat reseptor ujung saraf (nosiseptor) yang utuh merespons terhadap peradangan/luka jaringan baru, dan dibagi lagi jadi visceral dan somatik. Keluhan pasca keseleo sendi (robeknya ligamen/otot superfisial bagian luar tubuh) dikategorikan secara spesifik sebagai tipe nyeri nosiseptif somatik. Sumber: Materi Modul Neuro 1 hal. 176, 662 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-077.png"
+      "images/packages/blok-2h__ub-2h/img-077.png"
     ],
     "isBroken": false
   },
@@ -1389,7 +1389,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Sindrom nyeri myofascial didefinisikan sebagai nyeri otot kronis lokal/regional yang bersifat referal, disebabkan oleh kontraktur mikroskopis pada serat otot. Tanda fisik klinis utamanya (hallmark) adalah jika dipalpasi/disentuh, akan terasa benjolan keras di dalam serabut otot yang memanjang kencang ibarat dawai gitar (dikenal sebagai taut band) yang melingkupi titik picu (trigger point). Sumber: Materi Modul Neuro 1 hal. 189 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-078.png"
+      "images/packages/blok-2h__ub-2h/img-078.png"
     ],
     "isBroken": false
   },
@@ -1408,7 +1408,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Vertigo vestibular umumnya diatasi dengan obat golongan vestibular suppressant atau antivertigo spesifik. Betahistine (analog histamin) adalah obat yang secara luas digunakan untuk terapi spesifik vertigo perifer (terutama Penyakit Meniere) karena bekerja melalui reseptor H1 dan H3 untuk meningkatkan aliran darah kapiler serta memperbaiki fungsi mikrosirkulasi di telinga dalam. Sumber: Materi Modul Neuro 1 hal. 479, 480 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-079.png"
+      "images/packages/blok-2h__ub-2h/img-079.png"
     ],
     "isBroken": false
   },
@@ -1427,7 +1427,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Tes provokasi saraf skiatika (penyebab LBP akibat saraf terjepit pada L4-S1) dilakukan dengan pasien telentang, kaki tidak ditekuk (lurus), lalu pinggul diangkat (fleksi) perlahan secara pasif oleh dokter. Ini disebut manuver Straight Leg Raise (SLR) atau lebih dikenal dengan nama eponim Tes Lasègue. Dinyatakan positif apabila nyeri tersetrum muncul dan menjalar ke bawah pantat pada elevasi sudut kaki 30–70 derajat. Sumber: Materi Modul Neuro 1 hal. 203; mirip dengan Minites 1 pertanyaan 10 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-080.jpeg"
+      "images/packages/blok-2h__ub-2h/img-080.jpeg"
     ],
     "isBroken": false
   },
@@ -1463,7 +1463,7 @@ export const questions = [
     "answer": "A",
     "explanation": "Ada 4 tahapan kronologis perjalanan nyeri: (1) Transduksi, di mana rangsang mekanik/kimia perusak diubah (ditransduksi) oleh zat kimia inflamasi menjadi impuls saraf aksi; (2) Transmisi, impuls tersebut dialirkan (dirambatkan) ke sentral melalui jalur serabut A-delta dan C hingga ke medula spinalis; (3) Modulasi (penekanan sinyal nyeri); dan (4) Persepsi (sadar bahwa tubuh merasa sakit). Sumber: Materi Modul Neuro 1 hal. 664 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-081.png"
+      "images/packages/blok-2h__ub-2h/img-081.png"
     ],
     "isBroken": false
   },
@@ -1482,7 +1482,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Sindrom meningitis aseptik paling dominan dan umum diseluruh belahan dunia diakibatkan oleh kelompok RNA virus famili Picornaviridae, yaitu spesies non-polio Enterovirus (terutama jenis coxsackievirus grup A/B dan echovirus). Insiden kejadiannya menyumbang lebih dari separuh keseluruhan kasus pada anak maupun dewasa muda (virus lain juga bisa seperti Herpes atau HSV namun lebih khas sebagai penyebab ensefalitis, bukan sekadar meningitis). Sumber: Materi Modul Neuro 1 hal. 530, 532 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-082.png"
+      "images/packages/blok-2h__ub-2h/img-082.png"
     ],
     "isBroken": false
   },
@@ -1501,7 +1501,7 @@ export const questions = [
     "answer": "A",
     "explanation": "Penyakit infeksi susunan saraf pusat seperti meningoensefalitis tidak dapat didiagnosis pastinya hanya melalui gejala, CT-Scan (hanya untuk komplikasi), atau darah vena rutin. Konfirmasi pamungkas (baku emas) adalah dengan menusuk tulang belakang (pungsi lumbal) dan mengambil, menganalisis, serta membiakkan Cairan Serebrospinal / CSS (LCS/CSF) di laboratorium untuk melihat jumlah sel, profil protein glukosa, gram, dan mikroba patogen spesifiknya. Gambar dari ppt dr edras infeksi SSP mengenai Meningitis-ensefalitis. Sumber: Materi Modul Neuro 1 hal. 694, 549 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-083.png"
+      "images/packages/blok-2h__ub-2h/img-083.png"
     ],
     "isBroken": false
   },
@@ -1520,9 +1520,9 @@ export const questions = [
     "answer": "C",
     "explanation": "Karakter nyeri kepala berulang yang bersifat tumpul menyerupai karet/topi yang diikat kencang pada area pelipis/tengkuk (bilateral) ringan-sedang, dan tak pernah sampai memualkan/muntah, adalah ciri patognomonik dari nyeri kepala tipe tegang (Tension Type Headache/TTH). Apabila keluhan ini terjadi <15 hari dalam sebulan, ia digolongkan sebagai varian episodik (Episodic TTH). PENJELASAN TAMBAHAN - di ppt dokter Kriswanto memang gak ada Episodik TTH, pilih TTH biasa kalau ada tapi baca kasus nya juga. Gambar terakhir dari jurnal yang ngejelasin Episodic TTH vs TTH, Jurnal nya dari https://pmc.ncbi.nlm.nih.gov/articles/PMC3444224/ Sumber: Materi Modul Neuro 1 hal. 615, 651; mirip dengan Minites 1 pertanyaan 4  ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-084.png",
-      "images/packages/blok-2h__ub-2h-v1/img-085.png",
-      "images/packages/blok-2h__ub-2h-v1/img-086.png"
+      "images/packages/blok-2h__ub-2h/img-084.png",
+      "images/packages/blok-2h__ub-2h/img-085.png",
+      "images/packages/blok-2h__ub-2h/img-086.png"
     ],
     "isBroken": false
   },
@@ -1541,9 +1541,9 @@ export const questions = [
     "answer": "C",
     "explanation": "Deskripsi gerakan di luar kendali yang mengalir tak teratur, tidak ritmis, sangat asimetris berpindah secara zig-zag/acak di sekujur tubuh (dari bahu, pindah ke jari tangan, lalu pindah melempar tungkai), dan penderitanya seolah-olah terlihat \"menari\" secara kasar (dance-like movement), secara definisi terminologi disimpulkan sebagai gerak Chorea (dari bahasa Yunani: Khoreia, tari-tarian; seperti pada Huntington chorea).  Sumber: Materi Modul Neuro 1 hal. 247, 250, 278 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-087.png",
-      "images/packages/blok-2h__ub-2h-v1/img-088.png",
-      "images/packages/blok-2h__ub-2h-v1/img-089.png"
+      "images/packages/blok-2h__ub-2h/img-087.png",
+      "images/packages/blok-2h__ub-2h/img-088.png",
+      "images/packages/blok-2h__ub-2h/img-089.png"
     ],
     "isBroken": false
   },
@@ -1579,8 +1579,8 @@ export const questions = [
     "answer": "C",
     "explanation": "Secara mikropatogenesis, awal mula kerusakan/timbunan kerak pada pembuluh darah (aterosklerosis) dimulai ketika lapisan endotel pembuluh rusak, lalu lipid LDL tersusup ke lapisan intima, teroksidasi, lalu dicerna oleh makrofag menjadi sel busa (foam cells). Kelompok makrofag-lemak yang terkumpul ini akan terihat sebagai bercak/garis kuning di dalam arteri, yang secara klinis disebut Garis lemak (Fatty Streak). Ini adalah lesi pelopor pembentukan kerak patologis (plaque). Sumber: Materi Modul Neuro 1 hal. 17",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-090.png",
-      "images/packages/blok-2h__ub-2h-v1/img-091.png"
+      "images/packages/blok-2h__ub-2h/img-090.png",
+      "images/packages/blok-2h__ub-2h/img-091.png"
     ],
     "isBroken": false
   },
@@ -1599,7 +1599,7 @@ export const questions = [
     "answer": "B",
     "explanation": "PENJELASAN AI - Otak tengah mengontrol variasi pernapasan. Lesi otak bilateral (diensefalon) menyebabkan Cheyne-stokes, Medula memicu pola Ataksik (Biot). Apabila terjadi kerusakan yang spesifik berada di tingkat kaudal Pons dan menekan pusat apneustik pontin, akan muncul pola pernapasan henti-tarik napas/spasme, yaitu inspirasi maksimal panjang melengking diakhiri jeda menahan napas yang panjang seakan \"terkunci\" (Pernapasan Apneustik). PENJELASAN TAMBAHAN - Ini dari tutorial (atau kulpak tahun lalu tapi ya udah kita pake yang ada aja buat belajar)  Sumber: rekapan lama",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-092.png"
+      "images/packages/blok-2h__ub-2h/img-092.png"
     ],
     "isBroken": false
   },
@@ -1618,7 +1618,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Organ dalam berrongga di abdomen/toraks (yang terlapisi viseral/pleura) yang tidak terlalu spesifik distribusinya seperti Usus (Intestinum), lambung, hepar, maupun rahim dimasukkan dalam kategori penyalur sensasi reseptor nyeri Visceral. Ciri khas nyeri ini biasanya kolik, terasa mual, tidak terlokalisasi jelas, pegal menyebar (referred/dull). Adapun komponen Muskuloskeletal-Kutanous merupakan somatik. Sumber: Materi Modul Neuro 1 hal. 172, 174",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-093.png"
+      "images/packages/blok-2h__ub-2h/img-093.png"
     ],
     "isBroken": false
   },
@@ -1637,9 +1637,9 @@ export const questions = [
     "answer": "C",
     "explanation": "Definisi klasik (lama) dari TIA adalah gangguan/defisit persarafan serebral akibat kurang pasokan darah (iskemik) yang sepenuhnya membaik memutar balik normal tanpa sisa dalam durasi 24 jam. Namun menurut pedoman modern AHA/ASA dan klinis praktis, attack tersebut umumnya berakhir pulih sempurna dalam hitungan menit/jam (khususnya <1 jam) dan sama sekali tidak nampak bukti kerusakan/infark jaringan permanen secara objektif melalui pencitraan (CT/MRI normal). PENJELASAN TAMBAHAN - TIA CT scan nya normal, Stroke Iskemik CT SCAN nya ada infark (hipodens/jadi gelap) sumbernya belajar sendiri boss.🙏    Sumber: rekapan lama",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-094.png",
-      "images/packages/blok-2h__ub-2h-v1/img-095.png",
-      "images/packages/blok-2h__ub-2h-v1/img-096.png"
+      "images/packages/blok-2h__ub-2h/img-094.png",
+      "images/packages/blok-2h__ub-2h/img-095.png",
+      "images/packages/blok-2h__ub-2h/img-096.png"
     ],
     "isBroken": false
   },
@@ -1658,7 +1658,7 @@ export const questions = [
     "answer": "A",
     "explanation": "Di dalam stratifikasi pelayanan medis, pencegahan (prevention) juga dilakukan pada tahap akhir. Ketika pasien sudah menderita penyakit dan secara kuratif medis sudah diobati serta infeksi sudah reda (fase penyembuhan), dilakukan upaya penunjang berupa fisioterapi atau training ulang vokasional. Hal tersebut dirancang untuk memaksimalkan fungsi fisik dan menekan laju keparahan cacat ke depannya, yang dikenal secara eksklusif sebagai fungsi/upaya Rehabilitatif (Tertiary Prevention). (Tidak ada di PPT) Sumber: Materi Modul Neuro 1 hal. 482, 485 ",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-097.png"
+      "images/packages/blok-2h__ub-2h/img-097.png"
     ],
     "isBroken": false
   },
@@ -1677,7 +1677,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Pasien yang menderita cedera Trauma Brain Injury (TBI)/gegar otak berat rentan menderita serangan kejang (Post-traumatic Seizure) pada tujuh hari awal akut yang sangat merusak. Sesuai guideline Brain Trauma Foundation, secara klasik infus obat Fenitoin diberikan untuk menstabilkan jaringan luka ini dan melindungi otak guna profilaksis di minggu pertama. Seiring kemajuan medis, banyak center kini menggunakan Levetiracetam sebagai standar lini utama menggantikan fenitoin. Sumber: Materi Modul Neuro 1 hal. 152",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-098.png"
+      "images/packages/blok-2h__ub-2h/img-098.png"
     ],
     "isBroken": false
   },
@@ -1690,8 +1690,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-099.png"
+      "images/packages/blok-2h__ub-2h/img-099.png"
     ],
+    "explanationText": [],
     "isBroken": true
   },
   {
@@ -1703,11 +1704,14 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-100.png",
-      "images/packages/blok-2h__ub-2h-v1/img-101.png",
-      "images/packages/blok-2h__ub-2h-v1/img-102.png",
-      "images/packages/blok-2h__ub-2h-v1/img-103.png",
-      "images/packages/blok-2h__ub-2h-v1/img-104.png"
+      "images/packages/blok-2h__ub-2h/img-100.png",
+      "images/packages/blok-2h__ub-2h/img-101.png",
+      "images/packages/blok-2h__ub-2h/img-102.png",
+      "images/packages/blok-2h__ub-2h/img-103.png",
+      "images/packages/blok-2h__ub-2h/img-104.png"
+    ],
+    "explanationText": [
+      "Kemungkinan ini soal kasus yang ditanya intervensi nya apa atau termasuk intervensi apa."
     ],
     "isBroken": true
   },
@@ -1720,10 +1724,20 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-105.png",
-      "images/packages/blok-2h__ub-2h-v1/img-106.png",
-      "images/packages/blok-2h__ub-2h-v1/img-107.png",
-      "images/packages/blok-2h__ub-2h-v1/img-108.png"
+      "images/packages/blok-2h__ub-2h/img-105.png",
+      "images/packages/blok-2h__ub-2h/img-106.png",
+      "images/packages/blok-2h__ub-2h/img-107.png",
+      "images/packages/blok-2h__ub-2h/img-108.png"
+    ],
+    "explanationText": [
+      "Berdasarkan materi dr. Mahar di modul ini, penatalaksanaan untuk kasus seperti ini (pria dengan flashback yang dipicu oleh suara gemuruh pasca gempa) mengikuti prinsip intervensi psikososial pada populasi terpapar bencana, bukan dengan menantang persepsi pasien atau menyuruhnya menghindar.",
+      "Gejala pada kasus ini termasuk persistent re-experienced: flashback dan reaktivitas psikologis saat terpapar rangsangan yang menyerupai peristiwa traumatis (suara gemuruh menyerupai suara gempa). Jika sudah berlangsung lebih dari satu bulan sejak gempa, ini mengarah ke PTSD; bila masih dalam satu bulan pertama, ini termasuk acute stress disorder.",
+      "Prinsip penatalaksanaan menurut materi:",
+      "Psychological first aid untuk fase akut: mendengarkan secara aktif, menunjukkan empati, membantu akses kebutuhan dasar, tidak memaksa pasien untuk bercerita, menghindarkan pasien dari stresor sekunder, dan tanpa pemberian obat di tahap ini.",
+      "Edukasi komunitas yang hati-hati, dengan menekankan ekspektasi pemulihan alami (natural recovery expectation), karena memberi informasi tentang psikopatologi terlalu dini justru dapat memperburuk kondisi pasien.",
+      "Intervensi lanjutan di fase rekonsolidasi (setidaknya 4 minggu setelah kondisi stabil): outreach dan psikoedukasi, penguatan coping yang positif, serta pelatihan tenaga kesehatan primer dan tokoh masyarakat untuk deteksi dini dan rujukan.",
+      "Bila masalah berlanjut, layanan kesehatan jiwa primer diperkuat secara bertahap, bukan langsung dengan pendekatan konfrontatif atau penghindaran total terhadap pemicu.",
+      "Jadi, pendekatan yang didukung materi adalah mendampingi pasien secara suportif, memvalidasi pengalamannya tanpa terlalu dini membahas detail psikopatologis, dan menumbuhkan harapan pemulihan alami, bukan sekadar meyakinkan secara logis bahwa suara itu bukan gempa, bukan pula menyuruhnya menghindar dengan penutup telinga, dan bukan hanya menyatakan ia sudah pulih tanpa proses pendampingan."
     ],
     "isBroken": true
   },
@@ -1736,7 +1750,10 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-109.png"
+      "images/packages/blok-2h__ub-2h/img-109.png"
+    ],
+    "explanationText": [
+      "dari gpt, gak ketemu di ppt, mungkin dok jimmy? atau dok radiologi tahun lalu"
     ],
     "isBroken": true
   },
@@ -1749,7 +1766,10 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-110.png"
+      "images/packages/blok-2h__ub-2h/img-110.png"
+    ],
+    "explanationText": [
+      "gambar CARA KERJA ini amitriptilin sebagai antidepresan, tapi bisa dipakai juga dia sebagai antinyer neuropatik atau “analgesik adjuvan”, mekanisme nya ya sama cuma ada terusan dari “menghambat serotonin” nya yakni karena dia hambat serotonin + norepinefrin hambatan nya juga memperkuat jalur inhibisi nyeri desenden."
     ],
     "isBroken": true
   },
@@ -1762,12 +1782,13 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-111.png",
-      "images/packages/blok-2h__ub-2h-v1/img-112.png",
-      "images/packages/blok-2h__ub-2h-v1/img-113.png",
-      "images/packages/blok-2h__ub-2h-v1/img-114.png",
-      "images/packages/blok-2h__ub-2h-v1/img-115.png"
+      "images/packages/blok-2h__ub-2h/img-111.png",
+      "images/packages/blok-2h__ub-2h/img-112.png",
+      "images/packages/blok-2h__ub-2h/img-113.png",
+      "images/packages/blok-2h__ub-2h/img-114.png",
+      "images/packages/blok-2h__ub-2h/img-115.png"
     ],
+    "explanationText": [],
     "isBroken": true
   },
   {
@@ -1779,8 +1800,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-116.png"
+      "images/packages/blok-2h__ub-2h/img-116.png"
     ],
+    "explanationText": [],
     "isBroken": true
   },
   {
@@ -1792,6 +1814,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [],
+    "explanationText": [
+      "gua udah muak"
+    ],
     "isBroken": true
   },
   {
@@ -1803,6 +1828,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [],
+    "explanationText": [
+      "gua udah muak"
+    ],
     "isBroken": true
   },
   {
@@ -1814,8 +1842,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-117.png"
+      "images/packages/blok-2h__ub-2h/img-117.png"
     ],
+    "explanationText": [],
     "isBroken": true
   },
   {
@@ -1827,8 +1856,11 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-118.png",
-      "images/packages/blok-2h__ub-2h-v1/img-119.png"
+      "images/packages/blok-2h__ub-2h/img-118.png",
+      "images/packages/blok-2h__ub-2h/img-119.png"
+    ],
+    "explanationText": [
+      "Kelainan di arus pikir gitu mungkin?"
     ],
     "isBroken": true
   },
@@ -1841,8 +1873,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-120.png"
+      "images/packages/blok-2h__ub-2h/img-120.png"
     ],
+    "explanationText": [],
     "isBroken": true
   },
   {
@@ -1854,6 +1887,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [],
+    "explanationText": [
+      "Tidak jelas, soal tidak lengkap"
+    ],
     "isBroken": true
   },
   {
@@ -1865,6 +1901,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [],
+    "explanationText": [
+      "Materi Modul Neuro 1 hal. 84"
+    ],
     "isBroken": true
   },
   {
@@ -1876,6 +1915,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [],
+    "explanationText": [
+      "Materi Modul Neuro 1 hal. 621, 681"
+    ],
     "isBroken": true
   },
   {
@@ -1887,6 +1929,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [],
+    "explanationText": [
+      "Materi Modul Neuro 1 hal. 668"
+    ],
     "isBroken": true
   },
   {
@@ -1898,7 +1943,10 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-121.png"
+      "images/packages/blok-2h__ub-2h/img-121.png"
+    ],
+    "explanationText": [
+      "GCS 13"
     ],
     "isBroken": true
   },
@@ -1911,8 +1959,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-122.png"
+      "images/packages/blok-2h__ub-2h/img-122.png"
     ],
+    "explanationText": [],
     "isBroken": true
   },
   {
@@ -1924,8 +1973,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-123.png"
+      "images/packages/blok-2h__ub-2h/img-123.png"
     ],
+    "explanationText": [],
     "isBroken": true
   },
   {
@@ -1937,8 +1987,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-124.png"
+      "images/packages/blok-2h__ub-2h/img-124.png"
     ],
+    "explanationText": [],
     "isBroken": true
   },
   {
@@ -1950,8 +2001,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-125.png"
+      "images/packages/blok-2h__ub-2h/img-125.png"
     ],
+    "explanationText": [],
     "isBroken": true
   },
   {
@@ -1963,8 +2015,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-126.png"
+      "images/packages/blok-2h__ub-2h/img-126.png"
     ],
+    "explanationText": [],
     "isBroken": true
   },
   {
@@ -1976,8 +2029,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-127.png"
+      "images/packages/blok-2h__ub-2h/img-127.png"
     ],
+    "explanationText": [],
     "isBroken": true
   },
   {
@@ -1989,6 +2043,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [],
+    "explanationText": [
+      "TAU AH MALES"
+    ],
     "isBroken": true
   },
   {
@@ -2000,8 +2057,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-128.png"
+      "images/packages/blok-2h__ub-2h/img-128.png"
     ],
+    "explanationText": [],
     "isBroken": true
   },
   {
@@ -2013,8 +2071,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-129.png"
+      "images/packages/blok-2h__ub-2h/img-129.png"
     ],
+    "explanationText": [],
     "isBroken": true
   },
   {
@@ -2026,6 +2085,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [],
+    "explanationText": [
+      "ngantuk gua anjeng"
+    ],
     "isBroken": true
   },
   {
@@ -2037,8 +2099,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-130.png"
+      "images/packages/blok-2h__ub-2h/img-130.png"
     ],
+    "explanationText": [],
     "isBroken": true
   },
   {
@@ -2050,6 +2113,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [],
+    "explanationText": [
+      "siphilis no debat"
+    ],
     "isBroken": true
   },
   {
@@ -2061,9 +2127,10 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [
-      "images/packages/blok-2h__ub-2h-v1/img-131.png",
-      "images/packages/blok-2h__ub-2h-v1/img-132.png"
+      "images/packages/blok-2h__ub-2h/img-131.png",
+      "images/packages/blok-2h__ub-2h/img-132.png"
     ],
+    "explanationText": [],
     "isBroken": true
   },
   {
@@ -2075,6 +2142,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [],
+    "explanationText": [
+      "Gak tau males pengen beli saham"
+    ],
     "isBroken": true
   },
   {
@@ -2086,6 +2156,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [],
+    "explanationText": [
+      "Wooooyandaktau"
+    ],
     "isBroken": true
   },
   {
@@ -2097,6 +2170,9 @@ export const questions = [
     "answer": "",
     "explanation": "",
     "explanationImages": [],
+    "explanationText": [
+      "mending turu"
+    ],
     "isBroken": true
   }
 ];

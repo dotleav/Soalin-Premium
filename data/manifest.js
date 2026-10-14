@@ -14,12 +14,12 @@ export const packages = [
     "source": "Soal_UB_1J_2022_template_soalin (1).docx"
   },
   {
-    "id": "blok-2h__ub-2h-v1",
+    "id": "blok-2h__ub-2h",
     "category": "Blok 2H",
-    "title": "UB 2H v1",
-    "file": "./data/packages/blok-2h__ub-2h-v1/questions.js",
+    "title": "UB 2H",
+    "file": "./data/packages/blok-2h__ub-2h/questions.js",
     "count": 121,
-    "convertedAt": "2026-10-14T18:54:41.334Z",
+    "convertedAt": "2026-10-14T19:11:56.045Z",
     "source": "2 HAHA HIHI SENDIRI.docx"
   }
 ];

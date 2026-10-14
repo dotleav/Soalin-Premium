@@ -290,6 +290,11 @@ function cleanText(fragment) {
     .trim();
 }
 
+// Teks per paragraf dalam satu sel (dipakai untuk teks yang diketik di kolom gambar penjelasan)
+function cellParagraphs(fragment) {
+  return fragment.split(/<\/p>|<br\s*\/?>/i).map((s) => cleanText(s)).filter(Boolean);
+}
+
 function extractImages(fragment) {
   return [...fragment.matchAll(/<img[^>]*src="([^"]+)"[^>]*>/g)].map((x) => x[1]);
 }
@@ -537,6 +542,7 @@ function parsePart2(html, startingQNumber) {
       const origNo = firstCellText;
       const questionText = secondCellText;
       const explanationImages = cells[2] ? extractImages(cells[2]) : [];
+      const explanationText = cells[2] ? cellParagraphs(cells[2]) : [];
       // Also grab any images from question cell itself
       const questionImages = extractImages(cells[1] || "");
 
@@ -552,6 +558,7 @@ function parsePart2(html, startingQNumber) {
         answer: "",
         explanation: "",
         explanationImages,
+        explanationText,
         isBroken: true,
       });
     }

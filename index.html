@@ -1254,6 +1254,7 @@
     display: flex; align-items: center; gap: 6px;
     color: var(--blue); font-weight: 700; font-size: 0.78rem; margin-bottom: 8px;
   }
+  .brokenReveal .exText p { color: var(--text); font-size: 0.88rem; line-height: 1.6; margin: 0 0 8px; }
   .brokenReveal .noImg {
     color: var(--muted2); font-size: 0.78rem; font-style: italic;
   }
@@ -3075,7 +3076,7 @@ async function convertDocx(buf) {
         if (!questionText) continue;
         broken.push({
           id: `QB${origNo || startingQNumber + broken.length + 1}`, category: "Soal Rusak", question: questionText,
-          questionImages: images(1), options: {}, answer: "", explanation: "", explanationImages: images(2), isBroken: true,
+          questionImages: images(1), options: {}, answer: "", explanation: "", explanationImages: images(2), explanationText: (lines[2] || []).map((l) => l.text).filter(Boolean), isBroken: true,
         });
       }
     }
@@ -4001,14 +4002,16 @@ function renderBrokenCard(q, qNum) {
   const isRevealed = brokenRevealed.has(q.id);
   const hasImages = (q.explanationImages || []).length > 0;
   const hasQImages = (q.questionImages || []).length > 0;
+  const exText = (q.explanationText || []).filter(Boolean);
 
   const revealHtml = isRevealed ? `
     <div class="brokenReveal">
       <div class="tag">🖼️ Gambar Penjelasan</div>
       ${hasQImages ? (q.questionImages || []).map(src => `<img class="exImg" src="${src}" alt="gambar soal">`).join("") : ""}
+      ${exText.length ? `<div class="exText">${exText.map(t => `<p>${escapeHtml(t)}</p>`).join("")}</div>` : ""}
       ${hasImages
         ? (q.explanationImages || []).map(src => `<img class="exImg" src="${src}" alt="gambar penjelasan">`).join("")
-        : `<p class="noImg">(belum ada gambar penjelasan di dokumen ini)</p>`}
+        : exText.length ? "" : `<p class="noImg">(belum ada gambar penjelasan di dokumen ini)</p>`}
     </div>
   ` : "";
 
