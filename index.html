@@ -2782,6 +2782,7 @@
   body.doksli .options .option { overflow: visible; }
 
 </style>
+<link rel="stylesheet" href="./css/multiplayer.css">
 </head>
 <body>
 
@@ -3117,6 +3118,14 @@ async function convertDocx(buf) {
 <!-- Audio manifest di-fetch secara async dari audio/manifest.json (di-generate
      lewat "npm run audio-manifest"). Kalau file tidak ada, suara tidak bunyi
      tapi app tetap jalan normal. -->
+<!-- Firebase (compat) untuk Multiplayer -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="./js/firebase-config.js"></script>
+<script src="./js/multiplayer.js"></script>
+<script src="./js/render-multiplayer.js"></script>
+<script src="./js/gamepad.js"></script>
 <script>
   // ── Doksli images — defined FIRST so render() can use them safely ──
   (function() {
@@ -3187,7 +3196,15 @@ const DIFFICULTY_CONFIG = {
   normal:   { label: "Orang Normal", emoji: "🧍", timerSeconds: 60,  desc: "dasar normies",                        color: "#58a6ff" },
   folivora: { label: "Folivora",     emoji: "🦥", timerSeconds: 300, desc: "pasti pas ditanya jawabannya \u201Chah?\u201D", color: "#86efac" },
   bekicot:  { label: "Bekicot",      emoji: "🐌", timerSeconds: 0,   desc: "mode biasa aja kalau gitu",            color: "#c084fc" },
+  minites:  { label: "minites dr Erda", emoji: "", icon: "./images/difficulty/squidward.png", timerSeconds: 15, desc: "Makan noh 15 detik", color: "#2dd4bf" },
 };
+
+// Ikon tingkat kesulitan: pakai gambar kalau ada `icon`, selain itu emoji.
+function diffIconHtml(cfg, cls) {
+  return cfg.icon
+    ? `<img class="${cls}" src="${cfg.icon}" alt="" aria-hidden="true">`
+    : cfg.emoji;
+}
 
 const app = document.getElementById("app");
 
@@ -4279,7 +4296,7 @@ function renderTentamenSetup() {
     html += `
       <button class="diffCard${active ? " active" : ""}" data-diff="${d}" style="${active ? `border-color:${dcfg.color}; background:${dcfg.color}18;` : ""}">
         <div class="diffTop">
-          <span class="diffEmoji">${dcfg.emoji}</span>
+          <span class="diffEmoji">${diffIconHtml(dcfg, "diffIcon")}</span>
           <span class="diffLabel" style="color:${active ? dcfg.color : "var(--text)"};">${dcfg.label}</span>
         </div>
         <div class="diffDesc">${escapeHtml(dcfg.desc)}</div>
@@ -4296,7 +4313,7 @@ function renderTentamenSetup() {
   </div>`;
 
   html += `<button class="startTentamenBtn" id="startTentamenBtn" style="background:${cfg.color};" ${qCount === 0 ? "disabled" : ""}>
-    \u25B6 Mulai Tentamen \u2014 ${cfg.emoji} ${cfg.label}
+    \u25B6 Mulai Tentamen \u2014 ${diffIconHtml(cfg, "startIcon")} ${cfg.label}
   </button>`;
   html += `</div>`;
   return html;
@@ -4453,6 +4470,16 @@ function renderSettingsCard() {
 
       <div class="settingsRow">
         <div class="settingsRowText">
+          <span class="settingsRowTitle">\uD83C\uDFAE Multiplayer</span>
+          <span class="settingsRowDesc">Main bareng: masukkan kode room dari host</span>
+        </div>
+        <button class="themeModeToggle" id="mpOpenBtn" aria-label="Buka multiplayer">
+          <span class="themeModeChevron">\u203A</span>
+        </button>
+      </div>
+
+      <div class="settingsRow">
+        <div class="settingsRowText">
           <span class="settingsRowTitle themeModeTitle">${current.icon} Mode UI: ${current.label}</span>
           <span class="settingsRowDesc">Pilih tampilan!</span>
         </div>
@@ -4565,6 +4592,13 @@ function renderPickerScreen() {
 }
 
 function attachPickerHandlers() {
+  const mpOpenBtn = document.getElementById("mpOpenBtn");
+  if (mpOpenBtn) mpOpenBtn.addEventListener("click", () => {
+    mpScreen = "join";
+    mpError = "";
+    render();
+  });
+
   app.querySelectorAll(".categoryHeader[data-cat]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const cat = btn.dataset.cat;
@@ -4626,6 +4660,12 @@ function attachPickerHandlers() {
 // ── Render utama ───────────────────────────────────────────────────────────
 function render() {
   syncThemeClass();
+
+  if (mpScreen) {
+    app.innerHTML = renderMultiplayerScreen();
+    attachMultiplayerHandlers();
+    return;
+  }
 
   if (pickerOpen || !allQuestions || allQuestions.length === 0) {
     app.innerHTML = renderPickerScreen();

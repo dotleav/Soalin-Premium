@@ -1,0 +1,25 @@
+{
+  "rules": {
+    "rooms": {
+      "$code": {
+        ".write": "(!data.exists() && newData.child('meta/hostUid').val() === auth.uid) || (data.child('meta/hostUid').val() === auth.uid)",
+        "meta": { ".read": "auth != null" },
+        "state": { ".read": "auth != null" },
+        "questions": { ".read": "auth != null" },
+        "reveal": { ".read": "auth != null" },
+        "players": {
+          ".read": "auth != null",
+          "$uid": { ".write": "$uid === auth.uid" }
+        },
+        "answers": {
+          ".read": "root.child('rooms/' + $code + '/meta/hostUid').val() === auth.uid",
+          "$i": {
+            "$uid": {
+              ".write": "$uid === auth.uid && !root.child('rooms/' + $code + '/reveal/' + $i).exists()"
+            }
+          }
+        }
+      }
+    }
+  }
+}
