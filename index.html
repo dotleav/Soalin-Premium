@@ -4883,10 +4883,10 @@ boot();
 // Password TIDAK lagi disimpan plaintext. Yang disimpan: salt + hash PBKDF2-SHA256.
 // Ganti password: buka console di halaman ini, jalankan  gateMake("password-baru")
 // lalu tempel salt & hash yang dicetak ke GATE_SALT / GATE_HASH di bawah.
-const GATE_KEY  = "soalinprem_unlocked";
+const GATE_KEY  = "soalinprem_unlocked v3";
 const GATE_ITER = 600000;
-const GATE_SALT = "c89a455214eef4ddca57faa4d0f30669";
-const GATE_HASH = "f87316ddfb974ebc47a38346f670d8b670d19c28c3c960e9b2e3a4abe1d78a65";
+const GATE_SALT = "651d39d8671defda1c6081c39ad6dd91";
+const GATE_HASH = "c15339f6fcb6382dfb80d5798f81387a283c11634e86e418f56587a77aa7bc9c";
 
 const _hex   = b => [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, "0")).join("");
 const _unhex = s => Uint8Array.from(s.match(/../g), x => parseInt(x, 16));
