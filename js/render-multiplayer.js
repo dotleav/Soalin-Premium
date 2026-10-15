@@ -156,8 +156,8 @@ function renderMpPlaying() {
       </button>`;
   }).join("");
 
-  const qImgs = (q.questionImages || []).map((src) => `<img class="qImg" src="${escapeAttr(src)}" alt="gambar soal">`).join("");
-  const eImgs = (rev?.explanationImages || []).map((src) => `<img class="exImg" src="${escapeAttr(src)}" alt="gambar penjelasan">`).join("");
+  const qImgs = renderImgs(q.questionImages || [], "qImg", "gambar soal");
+  const eImgs = renderImgs(rev?.explanationImages || [], "exImg", "gambar penjelasan");
 
   let feedback = "";
   if (!mpIsHost) {

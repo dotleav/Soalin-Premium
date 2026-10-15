@@ -1162,6 +1162,11 @@
     border: 1px solid var(--border); margin-bottom: 14px;
   }
 
+  .imgStack { position: relative; margin-bottom: 14px; touch-action: pan-y; }
+  .imgStack .qImg, .imgStack .exImg { margin-bottom: 0; }
+  .stackBar { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 6px; font-size: 0.72rem; opacity: 0.75; }
+  .stackCount { font-family: "JetBrains Mono", monospace; font-weight: 700; color: var(--accent); }
+
   .options { display: flex; flex-direction: column; gap: 9px; }
   .option {
     display: flex; align-items: flex-start; gap: 10px;
@@ -3120,6 +3125,8 @@ async function convertDocx(buf) {
      lewat "npm run audio-manifest"). Kalau file tidak ada, suara tidak bunyi
      tapi app tetap jalan normal. -->
 <!-- Firebase (compat) untuk Multiplayer -->
+<script src="./data/stacks.js"></script>
+<script src="./js/img-stack.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
@@ -4007,10 +4014,10 @@ function renderBrokenCard(q, qNum) {
   const revealHtml = isRevealed ? `
     <div class="brokenReveal">
       <div class="tag">🖼️ Gambar Penjelasan</div>
-      ${hasQImages ? (q.questionImages || []).map(src => `<img class="exImg" src="${src}" alt="gambar soal">`).join("") : ""}
+      ${hasQImages ? renderImgs(q.questionImages || [], "exImg", "gambar soal") : ""}
       ${exText.length ? `<div class="exText">${exText.map(t => `<p>${escapeHtml(t)}</p>`).join("")}</div>` : ""}
       ${hasImages
-        ? (q.explanationImages || []).map(src => `<img class="exImg" src="${src}" alt="gambar penjelasan">`).join("")
+        ? renderImgs(q.explanationImages || [], "exImg", "gambar penjelasan")
         : exText.length ? "" : `<p class="noImg">(belum ada gambar penjelasan di dokumen ini)</p>`}
     </div>
   ` : "";
@@ -4077,7 +4084,7 @@ function renderIsianCard(q, qNum, answeredValue) {
         ${isAnswered ? `<span class="tapHint">✅ Sudah dijawab</span>` : ""}
       </div>
       <p class="qText"><span class="qNum mono">${qNum}.</span>${escapeHtml(q.question)}</p>
-      ${(q.questionImages || []).map(src => `<img class="qImg" src="${src}" alt="gambar soal">`).join("")}
+      ${renderImgs(q.questionImages || [], "qImg", "gambar soal")}
       ${bodyHtml}
     </div>
   `;
@@ -4127,7 +4134,7 @@ function renderQuestionCard(q, qNum, chosen, revealAnswer) {
     <div class="explanation">
       <div class="tag">\uD83D\uDCD6 Penjelasan</div>
       <p>${escapeHtml(q.explanation || "(tidak ada penjelasan)")}</p>
-      ${(q.explanationImages || []).map(src => `<img class="exImg" src="${src}" alt="gambar penjelasan">`).join("")}
+      ${renderImgs(q.explanationImages || [], "exImg", "gambar penjelasan")}
     </div>
   ` : "";
 
@@ -4137,7 +4144,7 @@ function renderQuestionCard(q, qNum, chosen, revealAnswer) {
         ${(q.questionImages || []).length > 0 ? `<span class="imgBadge">\uD83D\uDDBC\uFE0F Bergambar</span>` : ""}
       </div>
       <p class="qText"><span class="qNum mono">${qNum}.</span>${escapeHtml(q.question)}</p>
-      ${(q.questionImages || []).map(src => `<img class="qImg" src="${src}" alt="gambar soal">`).join("")}
+      ${renderImgs(q.questionImages || [], "qImg", "gambar soal")}
       <div class="options">${optionsHtml}</div>
       ${skipNoteHtml}
       ${explanationHtml}

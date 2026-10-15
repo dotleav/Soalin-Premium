@@ -5,6 +5,15 @@
 
 export const packages = [
   {
+    "id": "mri-brain-lobes__lobus-otak-sagittal",
+    "category": "MRI Neuroanatomi",
+    "title": "Lobus Otak - MRI Sagittal",
+    "file": "./data/packages/mri-brain-lobes/questions.js",
+    "count": 15,
+    "convertedAt": "2026-10-15T00:00:00.000Z",
+    "source": "Radiopaedia brain-lobes-annotated-mri-1 (M. Debowski 2018, CC BY-NC-SA)"
+  },
+  {
     "id": "blok-1j__ub-1j-temporary",
     "category": "Blok 1J",
     "title": "UB 1J (Temporary)",

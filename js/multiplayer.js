@@ -91,7 +91,7 @@ async function mpCreateRoom() {
     publicQs[i] = {
       question: q.question || "",
       options: q.options || {},
-      questionImages: (q.questionImages || []).filter((s) => typeof s === "string"),
+      questionImages: (q.questionImages || []).filter((s) => typeof s === "string" || Array.isArray(s) || (s && typeof s === "object" && s.stack)),
     };
   });
 
@@ -263,7 +263,7 @@ async function mpHostReveal(fromIdx) {
     [`rooms/${mpRoomCode}/reveal/${i}`]: {
       answer: q.answer || "",
       explanation: q.explanation || "",
-      explanationImages: (q.explanationImages || []).filter((s) => typeof s === "string"),
+      explanationImages: (q.explanationImages || []).filter((s) => typeof s === "string" || Array.isArray(s) || (s && typeof s === "object" && s.stack)),
     },
     [`rooms/${mpRoomCode}/state/revealed`]: true,
   });
