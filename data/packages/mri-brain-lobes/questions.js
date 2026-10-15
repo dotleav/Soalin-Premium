@@ -20,7 +20,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Pada gambar, warna merah menunjukkan Lobus frontal.",
     "explanationImages": [
-      "images/soal/brain-lobes-legend.png"
+      "images/stacks/brain-lobes/jawaban/brain-lobes-legend.png"
     ],
     "isBroken": false
   },
@@ -66,7 +66,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Pada gambar, warna kuning menunjukkan Lobus temporal.",
     "explanationImages": [
-      "images/soal/brain-lobes-legend.png"
+      "images/stacks/brain-lobes/jawaban/brain-lobes-legend.png"
     ],
     "isBroken": false
   },
@@ -89,7 +89,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Pada gambar, warna hijau menunjukkan Lobus oksipital.",
     "explanationImages": [
-      "images/soal/brain-lobes-legend.png"
+      "images/stacks/brain-lobes/jawaban/brain-lobes-legend.png"
     ],
     "isBroken": false
   },
@@ -112,7 +112,7 @@ export const questions = [
     "answer": "E",
     "explanation": "Pada gambar, warna oranye menunjukkan Lobus insular.",
     "explanationImages": [
-      "images/soal/brain-lobes-legend.png"
+      "images/stacks/brain-lobes/jawaban/brain-lobes-legend.png"
     ],
     "isBroken": false
   },
@@ -135,7 +135,7 @@ export const questions = [
     "answer": "D",
     "explanation": "Pada gambar, warna merah tua menunjukkan Girus singulata.",
     "explanationImages": [
-      "images/soal/brain-lobes-legend.png"
+      "images/stacks/brain-lobes/jawaban/brain-lobes-legend.png"
     ],
     "isBroken": false
   },
@@ -158,7 +158,7 @@ export const questions = [
     "answer": "E",
     "explanation": "Pada gambar, warna ungu muda menunjukkan Talamus.",
     "explanationImages": [
-      "images/soal/brain-lobes-legend.png"
+      "images/stacks/brain-lobes/jawaban/brain-lobes-legend.png"
     ],
     "isBroken": false
   },
@@ -181,7 +181,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Pada gambar, warna coklat menunjukkan Nukleus kaudatus.",
     "explanationImages": [
-      "images/soal/brain-lobes-legend.png"
+      "images/stacks/brain-lobes/jawaban/brain-lobes-legend.png"
     ],
     "isBroken": false
   },
@@ -204,7 +204,7 @@ export const questions = [
     "answer": "B",
     "explanation": "Pada gambar, warna merah muda menunjukkan Nukleus lentiformis.",
     "explanationImages": [
-      "images/soal/brain-lobes-legend.png"
+      "images/stacks/brain-lobes/jawaban/brain-lobes-legend.png"
     ],
     "isBroken": false
   },
@@ -227,7 +227,7 @@ export const questions = [
     "answer": "E",
     "explanation": "Pada gambar, warna biru tua menunjukkan Hipokampus.",
     "explanationImages": [
-      "images/soal/brain-lobes-legend.png"
+      "images/stacks/brain-lobes/jawaban/brain-lobes-legend.png"
     ],
     "isBroken": false
   },
@@ -250,7 +250,7 @@ export const questions = [
     "answer": "D",
     "explanation": "Pada gambar, warna magenta menunjukkan Mesensefalon.",
     "explanationImages": [
-      "images/soal/brain-lobes-legend.png"
+      "images/stacks/brain-lobes/jawaban/brain-lobes-legend.png"
     ],
     "isBroken": false
   },
@@ -273,7 +273,7 @@ export const questions = [
     "answer": "A",
     "explanation": "Pada gambar, warna hijau kekuningan menunjukkan Pons.",
     "explanationImages": [
-      "images/soal/brain-lobes-legend.png"
+      "images/stacks/brain-lobes/jawaban/brain-lobes-legend.png"
     ],
     "isBroken": false
   },
@@ -296,7 +296,7 @@ export const questions = [
     "answer": "A",
     "explanation": "Pada gambar, warna toska menunjukkan Medula oblongata.",
     "explanationImages": [
-      "images/soal/brain-lobes-legend.png"
+      "images/stacks/brain-lobes/jawaban/brain-lobes-legend.png"
     ],
     "isBroken": false
   },
@@ -319,7 +319,7 @@ export const questions = [
     "answer": "C",
     "explanation": "Pada gambar, warna hijau zaitun menunjukkan Lobus anterior serebelum.",
     "explanationImages": [
-      "images/soal/brain-lobes-legend.png"
+      "images/stacks/brain-lobes/jawaban/brain-lobes-legend.png"
     ],
     "isBroken": false
   },
@@ -342,7 +342,7 @@ export const questions = [
     "answer": "D",
     "explanation": "Pada gambar, warna ungu menunjukkan Lobus posterior serebelum.",
     "explanationImages": [
-      "images/soal/brain-lobes-legend.png"
+      "images/stacks/brain-lobes/jawaban/brain-lobes-legend.png"
     ],
     "isBroken": false
   }
