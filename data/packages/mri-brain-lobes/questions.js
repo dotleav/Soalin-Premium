@@ -43,7 +43,7 @@ export const questions = [
     "answer": "E",
     "explanation": "Pada gambar, warna biru menunjukkan Lobus parietal.",
     "explanationImages": [
-      "images/soal/brain-lobes-legend.png"
+      "images/stacks/brain-lobes/jawaban/brain-lobes-legend.png"
     ],
     "isBroken": false
   },

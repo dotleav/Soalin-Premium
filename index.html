@@ -1162,7 +1162,9 @@
     border: 1px solid var(--border); margin-bottom: 14px;
   }
 
-  .imgStack { position: relative; margin-bottom: 14px; touch-action: pan-y; }
+  .imgStack { position: relative; margin-bottom: 14px; }
+  .stackBody { position: relative; padding-right: 34px; }
+  .stackSlider { position: absolute; top: 0; right: 0; width: 28px; height: 100%; margin: 0; writing-mode: vertical-lr; direction: ltr; touch-action: none; accent-color: var(--accent); cursor: pointer; }
   .imgStack .qImg, .imgStack .exImg { margin-bottom: 0; }
   .stackBar { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 6px; font-size: 0.72rem; opacity: 0.75; }
   .stackCount { font-family: "JetBrains Mono", monospace; font-weight: 700; color: var(--accent); }
