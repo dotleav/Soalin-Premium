@@ -325,13 +325,27 @@ function splitInlineQuestion(rawText) {
   const first = matches[0];
   const questionText = text.slice(0, first.index).trim();
   const options = {};
+  const optionExplanations = {};
   for (let i = 0; i < matches.length; i++) {
     const letter = matches[i][1].toUpperCase();
     const start = matches[i].index + matches[i][0].length;
     const end = i + 1 < matches.length ? matches[i + 1].index : text.length;
-    options[letter] = text.slice(start, end).trim();
+    const body = parseOptionBody(text.slice(start, end));
+    options[letter] = body.text;
+    if (body.exp) optionExplanations[letter] = body.exp;
   }
-  return { question: questionText, options, answer };
+  return { question: questionText, options, answer, optionExplanations };
+}
+
+// Penjelasan per opsi ada di dalam {...} di akhir baris opsi: "a. Jawaban {penjelasan}".
+// Kembalikan teks opsi (tanpa kurung) dan penjelasannya. open=true kalau "}" belum ketemu.
+function parseOptionBody(raw) {
+  const i = raw.indexOf("{");
+  if (i < 0) return { text: raw.trim(), exp: "", open: false };
+  const j = raw.indexOf("}", i);
+  const text = raw.slice(0, i).trim();
+  if (j < 0) return { text, exp: raw.slice(i + 1).trim(), open: true };
+  return { text, exp: raw.slice(i + 1, j).trim(), open: false };
 }
 
 function parsePart1(html) {
@@ -382,13 +396,14 @@ function parsePart1(html) {
   let pendingId = null;
   let currentCategory = "";
   let mode = null; // 'question' | 'explanation' | 'options' | 'answer'
+  let pendingOpt = null; // huruf opsi yang kurung {penjelasan}-nya belum tertutup
 
   const questionStart = /^(\d+)[.)]\s*(.*)$/;
   const idLine = /^ID\s*:\s*(.+)$/i;
   const optionLine = /^([A-Ea-e])[.)]\s*(.*)$/;
   // Terima "Kunci: X", "Jawaban: X", ATAU gabungan "Kunci Jawaban: X"
   const answerLine = /^(?:Kunci\s*Jawaban|Jawaban\s*Kunci|Kunci|Jawaban)\s*:?\s*([A-Ea-e])\b.*$/i;
-  const explanationLine = /^Penjelasan\s*:?\s*(.*)$/i;
+  const explanationLine = /^(?:Gambar\s+)?Penjelasan\s*:?\s*(.*)$/i;
   const categoryLine = /^Kategori\s*:\s*(.+)$/i;
 
   function pushCurrent() {
@@ -398,6 +413,18 @@ function parsePart1(html) {
 
   for (const line of lines) {
     const { text, images, isHeading, isListItem } = line;
+
+    if (pendingOpt && current) {
+      // Lanjutan penjelasan opsi (kurung belum tertutup) sampai ketemu "}".
+      const close = text.indexOf("}");
+      const chunk = close < 0 ? text : text.slice(0, close);
+      current.optionExplanations[pendingOpt] = `${current.optionExplanations[pendingOpt] || ""} ${chunk}`.trim();
+      current.explanationImages.push(...images);
+      if (close >= 0) pendingOpt = null;
+      continue;
+    }
+
+    if (/^Sumber\s*:/i.test(text)) continue; // rujukan hal. PPT, bukan bagian soal
 
     if (isHeading) {
       currentCategory = text;
@@ -425,6 +452,7 @@ function parsePart1(html) {
         question: inline ? inline.question : text,
         questionImages: [...images],
         options: inline ? inline.options : {},
+        optionExplanations: inline ? inline.optionExplanations : {},
         answer: inline ? inline.answer : "",
         explanation: "",
         explanationImages: [],
@@ -447,6 +475,7 @@ function parsePart1(html) {
         question: inline ? inline.question : rawQuestionText,
         questionImages: [...images],
         options: inline ? inline.options : {},
+        optionExplanations: inline ? inline.optionExplanations : {},
         answer: inline ? inline.answer : "",
         explanation: "",
         explanationImages: [],
@@ -460,7 +489,11 @@ function parsePart1(html) {
 
     const optMatch = text.match(optionLine);
     if (optMatch) {
-      current.options[optMatch[1].toUpperCase()] = optMatch[2].trim();
+      const letter = optMatch[1].toUpperCase();
+      const body = parseOptionBody(optMatch[2]);
+      current.options[letter] = body.text;
+      if (body.exp) current.optionExplanations[letter] = body.exp;
+      if (body.open) pendingOpt = letter;
       current.questionImages.push(...images);
       mode = "options";
       continue;
